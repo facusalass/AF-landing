@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
 import Header from "./components/Header.astro";
+import Footer from "./components/Footer.astro";
+
 ---
 
 <html lang="es">
@@ -15,25 +17,26 @@ import Header from "./components/Header.astro";
   </head>
 
   <!-- Fondo uniforme: claro arriba → oscuro abajo -->
-  <body class="min-h-screen bg-gradient-to-b from-indigo-200 via-slate-800 via-indigo-900/60 to-slate-950 text-white">
+  <body class="min-h-screen bg-gradient-to-b from-blue-200 via-slate-900 via-indigo-900/60 to-slate-950 text-white">
 
     <!-- HEADER -->
-    <Header rightInicio="Inicio" rightinfo="Soluciones" rightCta="Hablemos" />
-
+     <div class="py-10">
+    <Header rightInicio="Inicio" rightinfo="Trabajos" rightCta="Contactanos" />
+   </div>
     <!-- HERO -->
     <section class="py-24">
       <div class="max-w-7xl mx-auto px-10">
         <h1 class="font-mont font-semibold text-5xl md:text-6xl leading-tight text-left">
-          Bienvenidos a <span class="italic font-bold text-indigo-100">AFdevelopers</span>
+          Bienvenidos a <span class="italic font-bold text-neutral-200">AFdevelopers</span>
         </h1>
         <h2 class="font-mont text-3xl md:text-4xl font-semibold mt-2 text-left text-slate-100">
-          Tu software a medida.
+          Transforma tu negocio en una plataforma </br> Que vende, gestiona y crece sola..
         </h2>
 
         <p class="font-poppins text-neutral-200 text-lg md:text-xl mt-6 max-w-2xl">
-          Desarrollamos sitios web, sistemas y plataformas modernas que se adaptan a tu negocio.
+          Desarrollamos sitios web, sistemas y plataformas modernas que se adaptan totalmente a las necesidades de tu negocio.
           <br class="hidden md:block" />
-          Rápidas, seguras y pensadas para escalar.
+          Completas, seguras y pensadas para escalar, sin depender de terceros.
         </p>
 
         <div class="mt-10 flex flex-col sm:flex-row gap-4">
@@ -41,13 +44,13 @@ import Header from "./components/Header.astro";
             href="#contacto"
             class="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400 text-slate-900 text-lg font-medium font-poppins hover:from-indigo-300 hover:to-cyan-300 transition"
           >
-            Hablemos
+          Contanos tu idea
           </a>
           <a
             href="#proyectos"
             class="px-6 py-3 rounded-full border border-indigo-300/60 text-indigo-100 text-lg font-poppins hover:border-cyan-300 hover:text-cyan-200 transition"
           >
-            Ver proyectos
+            Ver trabajos
           </a>
         </div>
       </div>
@@ -94,7 +97,10 @@ import Header from "./components/Header.astro";
       >
         Contactar
       </a>
-    </section>
 
+
+
+    </section>
+ <Footer />
   </body>
 </html>
