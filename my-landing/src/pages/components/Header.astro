@@ -1,0 +1,24 @@
+---
+const { rightinfo = "Acerca de", rightCta = "Proyectos" , ctaHref = "#",rightInicio="Inicio" } = Astro.props;
+---
+<header class="bg-neutral-800 text-white">
+  <div class="mx-auto max-w-7xl h-14 px-4 flex items-center justify-between">
+    <!-- LOGO -->
+    <a href="/" class="font-mont text-white text-2xl tracking-tight">
+      <span class="italic font-semibold">AF</span>
+      <span class="not-italic font-normal">developers</span>
+    </a>
+
+   <!-- LADO DERECHO -->
+<div class="flex items-center gap-12 font-poppins">
+  <span class="text-md text-neutral-300">{rightInicio}</span>
+  <span class="text-md text-neutral-300">{rightinfo}</span>
+
+  <a href={ctaHref}
+     class="inline-flex items-center rounded-full bg-violet-300 px-4 py-1.5 text-md font-medium text-neutral-900">
+    {rightCta}
+  </a>
+</div>
+
+  </div>
+</header>
