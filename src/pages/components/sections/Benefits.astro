@@ -1,0 +1,75 @@
+---
+// src/components/sections/Benefits.astro
+import { Icon } from 'astro-icon/components'; // Necesitarás iconos adecuados
+
+// Definimos los beneficios/soluciones clave
+const benefits = [
+  {
+    iconName: "heroicons:chat-bubble-left-right", // Ícono para Comunicación/Entendimiento
+    title: "Tu Visión, Nuestra Experiencia",
+    description: "No te damos una solución genérica. Primero, escuchamos y entendemos a fondo tu negocio y tus objetivos. Luego, diseñamos una estrategia digital a medida solo para vos.",
+    align: "left" // Para controlar la alternancia
+  },
+  {
+    iconName: "heroicons:computer-desktop", // Ícono para Presencia Digital/Plataformas
+    title: "Tu Presencia Online, a Tu Medida",
+    description: "Ya sea una web impactante, una app móvil o una plataforma completa, creamos la solución digital *exacta* que necesitás. Rápida, segura y diseñada para darte el control total de tus ventas y ayudarte a crecer.",
+    align: "right" // Mantenemos la alineación para el layout alternado
+  },
+  {
+    iconName: "heroicons:puzzle-piece", // Ícono para Integración/Automatización
+    title: "Automatizamos lo Complejo",
+    description: "Conectamos tus herramientas existentes (CRM, pagos, etc.) o creamos nuevas para que las tareas repetitivas se hagan solas. Así, vos y tu equipo pueden enfocarse en hacer crecer el negocio.",
+    align: "left"
+  },
+  {
+    iconName: "heroicons:shield-check", // Ícono para Proceso Sencillo/Confianza
+    title: "Nosotros nos encargamos de la Tecnología",
+    description: "Tu rol es contarnos tu necesidad y darnos feedback. Del código, la configuración y los detalles técnicos nos ocupamos nosotros. Te entregamos una solución lista para usar, sin complicaciones.",
+    align: "right"
+  }
+];
+---
+
+<section id="beneficios" class="py-24 sm:py-32 overflow-hidden"> {/* overflow-hidden ayuda con animaciones futuras */}
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="max-w-3xl mx-auto text-center mb-16 lg:mb-20">
+      <h2 class="font-mont text-3xl md:text-4xl font-semibold text-indigo-200">
+        Beneficios y Soluciones a tu Medida
+      </h2>
+      <p class="font-poppins text-neutral-300 text-lg md:text-xl mt-4">
+        Convertimos tus desafíos en oportunidades con tecnología pensada para vos. Así lo hacemos simple:
+      </p>
+    </div>
+
+    <div class="space-y-16 lg:space-y-24">
+      {benefits.map((benefit, index) => (
+        <div class={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ${index % 2 !== 0 ? 'lg:grid-flow-col-dense' : ''}`}>
+          
+          {/* Columna del Icono/Visual */}
+          <div class={`flex justify-center ${index % 2 !== 0 ? 'lg:order-last' : ''}`}>
+             {/* Un contenedor visualmente atractivo para el ícono */}
+             <div class="relative w-48 h-48 lg:w-64 lg:h-64 flex items-center justify-center">
+                 {/* Fondo sutil */}
+                <div class="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-xl"></div>
+                 {/* Icono */}
+                <Icon name={benefit.iconName} class="relative h-20 w-20 lg:h-28 lg:w-28 text-cyan-300" />
+             </div>
+          </div>
+
+          {/* Columna del Texto */}
+          <div>
+            <h3 class="font-mont text-2xl lg:text-3xl font-semibold text-indigo-300 mb-4">
+              {benefit.title}
+            </h3>
+            <p class="font-poppins text-neutral-200/90 text-base lg:text-lg leading-relaxed">
+              {benefit.description}
+            </p>
+            {/* Opcional: Podrías añadir un pequeño link "Ver más" si fuera necesario */}
+          </div>
+
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -2,105 +2,97 @@
 import "../styles/global.css";
 import Header from "./components/Header.astro";
 import Footer from "./components/Footer.astro";
-
+import PainPoints from "./components/sections/PainPoints.astro";
+import Portfolio from "./components/sections/PortFolio.astro"
+import ContactSection from "./components/sections/ContactSection.astro";
+import ReviewSection from "./components/sections/Reviews.astro";
+import BenefitsSection from "./components/sections/Benefits.astro";
 ---
 
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>AFdevelopers — Software a medida</title>
-    <meta
-      name="description"
-      content="Creamos soluciones digitales personalizadas: sitios web, sistemas y plataformas que impulsan tu negocio."
-    />
-  </head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>AFdevelopers — Software a medida</title>
+    <meta
+      name="description"
+      content="Creamos soluciones digitales personalizadas: sitios web, sistemas y plataformas que impulsan tu negocio."
+    />
+  </head>
 
-  <!-- Fondo uniforme: claro arriba → oscuro abajo -->
-  <body class="min-h-screen bg-gradient-to-b from-blue-200 via-slate-900 via-indigo-900/60 to-slate-950 text-white">
+  <body class="min-h-screen text-white">
 
-    <!-- HEADER -->
-     <div class="py-10">
-    <Header rightInicio="Inicio" rightinfo="Trabajos" rightCta="Contactanos" />
-   </div>
-    <!-- HERO -->
-    <section class="py-24">
-      <div class="max-w-7xl mx-auto px-10">
-        <h1 class="font-mont font-semibold text-5xl md:text-6xl leading-tight text-left">
-          Bienvenidos a <span class="italic font-bold text-neutral-200">AFdevelopers</span>
-        </h1>
-        <h2 class="font-mont text-3xl md:text-4xl font-semibold mt-2 text-left text-slate-100">
-          Transforma tu negocio en una plataforma </br> Que vende, gestiona y crece sola..
-        </h2>
+<div class="min-h-screen bg-slate-900">
+            <div class="py-10">
+        <Header rightInicio="Inicio" rightinfo="Trabajos" rightCta="Contactanos" />
+      </div>
 
-        <p class="font-poppins text-neutral-200 text-lg md:text-xl mt-6 max-w-2xl">
-          Desarrollamos sitios web, sistemas y plataformas modernas que se adaptan totalmente a las necesidades de tu negocio.
-          <br class="hidden md:block" />
-          Completas, seguras y pensadas para escalar, sin depender de terceros.
-        </p>
+            <section class="py-20">
+        <div class="max-w-7xl mx-auto px-10">
+          <h1 class="font-mont font-semibold text-5xl md:text-6xl text-white text-left">
+            Bienvenidos a <span class="italic font-bold text-neutral-200">AFdevelopers</span>
+          </h1>
+          <h2 class="font-mont text-3xl md:text-4xl font-semibold mt-2 text-left text-slate-100">
+            Transforma tu negocio en una plataforma </br> Que vende, gestiona y crece sola...
+          </h2>
+          <p class="font-poppins text-neutral-200 text-lg md:text-xl mt-6 max-w-2xl">
+            Desarrollamos sitios web, sistemas y plataformas modernas que se adaptan totalmente a las necesidades de tu negocio.
+            <br class="hidden md:block" />
+            Completas, seguras y pensadas para escalar, sin depender de terceros.
+          </p>
+          <div class="mt-10 flex flex-col sm:flex-row gap-4">
+            <a
+              href="#contacto"
+              class="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400 text-slate-900 text-lg font-medium font-poppins hover:from-indigo-300 hover:to-cyan-300 transition"
+            >
+              Contanos tu idea
+            </a>
+            <a
+              href="#proyectos"
+              class="px-6 py-3 rounded-full border border-indigo-300/60 text-indigo-100 text-lg font-poppins hover:border-cyan-300 hover:text-cyan-200 transition"
+            >
+              Ver trabajos
+            </a>
+          </div>
+        </div>
+      </section>
 
-        <div class="mt-10 flex flex-col sm:flex-row gap-4">
-          <a
-            href="#contacto"
-            class="px-6 py-3 rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400 text-slate-900 text-lg font-medium font-poppins hover:from-indigo-300 hover:to-cyan-300 transition"
-          >
-          Contanos tu idea
-          </a>
-          <a
-            href="#proyectos"
-            class="px-6 py-3 rounded-full border border-indigo-300/60 text-indigo-100 text-lg font-poppins hover:border-cyan-300 hover:text-cyan-200 transition"
-          >
-            Ver trabajos
-          </a>
-        </div>
-      </div>
-    </section>
+            <section id="soluciones" class="py-22 bg-transparent">
+        <div class="max-w-7xl mx-auto px-10 text-left">
+          <h2 class="font-mont text-3xl md:text-4xl font-semibold mb-10 text-indigo-200">Qué hacemos</h2>
+          <div class="grid md:grid-cols-3 gap-8">
+            
+                        <div class="p-6 border border-white/10 rounded-2xl bg-black/20 hover:bg-black/30 transition">
+              <h3 class="font-mont text-xl font-semibold mb-2 text-indigo-300">Sitios web modernos</h3>
+              <p class="font-poppins text-neutral-200/80 text-sm leading-relaxed">
+                Creamos páginas web modernas, atractivas y adaptables a cualquier dispositivo . Diseñadas para que tu negocio se vea profesional, sea fácil de encontrar en Google y genere confianza desde el primer vistazo.
+              </p>
+            </div>
 
-    <!-- SERVICIOS DESTACADOS -->
-    <section id="soluciones" class="py-24 bg-transparent">
-      <div class="max-w-7xl mx-auto px-10 text-left">
-        <h2 class="font-mont text-3xl md:text-4xl font-semibold mb-10 text-indigo-200">Qué hacemos</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="p-6 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 transition">
-            <h3 class="font-mont text-xl font-semibold mb-2 text-indigo-300">Sitios web modernos</h3>
-            <p class="font-poppins text-neutral-200/80 text-sm leading-relaxed">
-              Diseños únicos, responsive y optimizados para SEO. Ideal para negocios que buscan presencia digital profesional.
-            </p>
-          </div>
-          <div class="p-6 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 transition">
-            <h3 class="font-mont text-xl font-semibold mb-2 text-indigo-300">Sistemas a medida</h3>
-            <p class="font-poppins text-neutral-200/80 text-sm leading-relaxed">
-              Aplicaciones internas, paneles de administración y herramientas adaptadas a tus procesos.
-            </p>
-          </div>
-          <div class="p-6 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 transition">
-            <h3 class="font-mont text-xl font-semibold mb-2 text-indigo-300">Integraciones y automatización</h3>
-            <p class="font-poppins text-neutral-200/80 text-sm leading-relaxed">
-              Conectamos tu sistema con APIs, CRMs y servicios externos para ahorrar tiempo y mejorar tu flujo de trabajo.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+                        <div class="p-6 border border-white/10 rounded-2xl bg-black/20 hover:bg-black/30 transition">
+              <h3 class="font-mont text-xl font-semibold mb-2 text-indigo-300">Sistemas a medida</h3>
+              <p class="font-poppins text-neutral-200/80 text-sm leading-relaxed">
+                Desarrollamos sistemas internos y paneles de administración hechos a medida, para que puedas gestionar tu negocio de forma simple, rápida y organizada. Todo adaptado exactamente a la forma en que trabajás.
+              </p>
+            </div>
 
-    <!-- CTA FINAL -->
-    <section id="contacto" class="py-20 bg-gradient-to-b from-transparent via-slate-950 to-black text-center">
-      <h2 class="font-mont text-3xl md:text-4xl font-semibold mb-4 text-indigo-100">
-        ¿Listo para llevar tu proyecto al siguiente nivel?
-      </h2>
-      <p class="font-poppins text-neutral-400 text-lg mb-8">
-        Contanos tu idea y diseñemos juntos una solución a medida.
-      </p>
-      <a
-        href="mailto:contacto@afdevelopers.com"
-        class="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400 text-slate-900 text-lg font-medium font-poppins hover:from-indigo-300 hover:to-cyan-300 transition"
-      >
-        Contactar
-      </a>
+                        <div class="p-6 border border-white/10 rounded-2xl bg-black/20 hover:bg-black/30 transition">
+              <h3 class="font-mont text-xl font-semibold mb-2 text-indigo-300">Integraciones y automatización</h3>
+              <p class="font-poppins text-neutral-200/80 text-sm leading-relaxed">
+        	  Automatizamos tareas repetitivas, como impresión automática de comandas o envío de mensajes a clientes, conectando tu sistema con otras herramientas para que trabajes más rápido y sin errores..
+              </p>
+        </div>
+          </div>
+        </div>
+      </section>
 
-
-
-    </section>
- <Footer />
-  </body>
+      <PainPoints />
+<BenefitsSection />
+       <ReviewSection />
+      <Portfolio />
+      <ContactSection />
+    
+      <Footer />
+      
+    </div>   </body>
 </html>

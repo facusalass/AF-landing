@@ -1,0 +1,87 @@
+---
+// src/components/sections/ContactSection.astro
+import { Icon } from 'astro-icon/components'; 
+// Asegúrate de haber instalado: npm install @iconify-json/logos @iconify-json/heroicons --save-dev
+---
+
+<section id="contacto" class="py-18 sm:py-32">
+  <div class="max-w-6xl mx-auto px-6 lg:px-10"> 
+    {/* Título */}
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="font-mont text-3xl md:text-4xl font-semibold text-indigo-200">
+        ¿Listo para empezar?
+      </h2>
+      <p class="font-poppins text-neutral-300 text-lg md:text-xl mt-4">
+        Agendá una reunión directamente en nuestro calendario o envianos un mensaje.
+      </p>
+    </div>
+
+    {/* Grid Principal */}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+      {/* --- Columna Izquierda: Información de Contacto --- */}
+      <div class="flex flex-col justify-center h-full text-center lg:text-left">
+        
+        <h3 class="font-mont text-4xl font-semibold text-indigo-300 mb-4"> 
+          Hablemos de tu proyecto
+        </h3>
+        
+        <p class="font-poppins text-neutral-300 mb-6 leading-relaxed">
+          Ya sea que necesites una landing page, un e-commerce completo o automatizar tus procesos, estamos listos para ayudarte a encontrar la solución tecnológica ideal.
+        </p>
+        <p class="font-poppins text-neutral-300 mb-8 leading-relaxed">
+          Seleccioná un horario en el calendario o contactanos directamente:
+        </p>
+        
+        {/* Contacto Directo */}
+        <div class="space-y-4 mb-8">
+          <a href="mailto:contacto@afdevelopers.com" class="flex items-center justify-center lg:justify-start gap-3 group">
+            <Icon name="heroicons:envelope" class="w-6 h-6 text-indigo-300 group-hover:text-cyan-300 transition" />
+            <span class="font-poppins text-neutral-200 group-hover:text-cyan-300 transition">
+              contacto@afdevelopers.com
+            </span>
+          </a>
+          <a href="https://wa.me/TUNUMERO" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center lg:justify-start gap-3 group"> {/* <-- Reemplaza TUNUMERO */}
+            <Icon name="logos:whatsapp-icon" class="w-6 h-6" /> 
+            <span class="font-poppins text-neutral-200 group-hover:text-cyan-300 transition">
+              Contactar por WhatsApp
+            </span> 
+            {/* CORRECCIÓN: El <a> de TikTok estaba mal anidado aquí dentro */}
+          </a> 
+          {/* CORRECCIÓN: Movimos el <a> de TikTok aquí abajo */}
+          <a 
+            href="https://tiktok.com/@afdevelopers12" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            aria-label="TikTok" 
+            class="flex items-center justify-center lg:justify-start gap-2 text-neutral-400 hover:text-white transition"
+          >
+            <Icon name="logos:tiktok-icon" class="w-6 h-6"/> 
+            <span class="text-xl font-poppins">Afdevelopers12</span> 
+          </a>
+        </div>
+        
+        {/* Ya no necesitamos este div separado para redes */}
+        {/* <div class="flex justify-center lg:justify-start items-center gap-6 mt-6"> ... </div> */}
+        
+      </div>
+
+      {/* --- Columna Derecha: Calendario Embebido --- */}
+      {/* (Esta columna ahora debería renderizarse correctamente a la derecha en pantallas grandes) */}
+      <div> 
+        <p class="font-poppins text-center text-indigo-200 mb-4 text-sm">
+          👇 Seleccioná un día y horario disponible para agendar:
+        </p>
+        <div class="border border-white/10 rounded-2xl bg-black/20 p-2 md:p-4 overflow-hidden"> 
+          <div 
+            class="calendly-inline-widget rounded-lg overflow-hidden" 
+            data-url="https://calendly.com/facusalass15/30min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=111827&text_color=ffffff&primary_color=818cf8" 
+            style="min-width: 260px; height: 550px;">
+          </div>
+          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+      </div>
+      
+    </div> {/* Cierre del grid principal */}
+  </div> {/* Cierre del contenedor max-w */}
+</section> {/* Cierre de la sección */}

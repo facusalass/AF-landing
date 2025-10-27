@@ -1,0 +1,74 @@
+---
+// src/components/sections/PainPoints.astro
+import { Icon } from 'astro-icon/components'; // 1. Import the Icon component
+
+const painPoints = [
+  {
+    // Icon names depend on the icon set you choose (e.g., 'heroicons:currency-dollar')
+    iconName: "heroicons:currency-dollar", 
+    title: "Dependés de plataformas de terceros",
+    description: "Pagás comisiones y no sos dueño de tu sistema. Te damos una plataforma propia y escalable."
+  },
+  {
+    iconName: "heroicons:chart-bar", // Example icon name
+    title: "Perdés ventas por no tener presencia online",
+    description: "Tus clientes te buscan en internet. Si no te encuentran, le compran a tu competencia."
+  },
+  {
+    iconName: "heroicons:clock", // Example icon name
+    title: "Tu sistema actual es lento y desactualizado",
+    description: "Un sistema lento frustra a tus usuarios y te hace ver poco profesional."
+  },
+  {
+    iconName: "heroicons:cog-6-tooth", // Example icon name
+    title: "Gastás horas en tareas que podrían automatizarse",
+    description: "Integramos tus herramientas para que puedas dedicarte a crecer, no a tareas repetitivas."
+  },
+  {
+    iconName: "heroicons:rocket-launch", // Example icon name
+    title: "No podés escalar sin tecnología propia",
+    description: "Las plataformas 'enlatadas' como FUDO tienen un límite. Un sistema a medida como el que ofrecemos crece con vos."
+  },
+  {
+    iconName: "heroicons:trophy", // Example icon name
+    title: "Tu competencia ya tiene plataforma digital",
+    description: "No te quedes atrás. Una plataforma moderna es una ventaja competitiva clave."
+  }
+];
+---
+
+<section id="dolores" class="py-24 sm:py-32">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="font-mont text-3xl md:text-4xl font-semibold text-indigo-200">
+        ¿Te pasa esto con tu negocio?
+      </h2>
+      <p class="font-poppins text-neutral-300 text-lg md:text-xl mt-4">
+        Conocemos lo que frena a muchos negocios o emprendimientos digitales y sabemos cómo solucionarlo.
+      </p>
+    </div>
+
+    <div class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+      {painPoints.map(item => (
+        // Card: Removed hover effect for a cleaner look, added padding top
+        <div class="p-6 pt-8 border border-white/10 rounded-2xl bg-black/20 text-center"> 
+          
+          {/* 2. Replaced Emoji Span with Astro Icon Component */}
+          <div class="inline-flex items-center justify-center p-3 bg-indigo-500/10 rounded-lg mb-6">
+            <Icon name={item.iconName} class="h-8 w-8 text-indigo-300" /> 
+          </div>
+
+          {/* Title */}
+          <h3 class="font-mont text-xl font-semibold text-indigo-300 mb-3">
+            {item.title}
+          </h3>
+          
+          {/* Description */}
+          <p class="font-poppins text-neutral-300/80 text-sm leading-relaxed">
+            {item.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

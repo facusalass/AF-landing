@@ -1,0 +1,64 @@
+---
+// src/components/sections/Review.astro
+
+// Datos de ejemplo para las reseñas
+const reviews = [
+  {
+    quote: "Transformaron nuestra idea en una plataforma increíble. El proceso fue claro y el resultado superó nuestras expectativas. ¡100% recomendados!",
+    author: "Ricardo Salas",
+    title: "Dueño, Negocio Local",
+    // Opcional: Podrías añadir una URL de imagen para el avatar
+    // avatarUrl: "/images/avatar-juan.jpg" 
+  },
+  {
+    quote: "Desde que implementamos el sistema a medida, ahorramos horas de trabajo manual cada semana. ¡Un antes y un después para nuestra gestión!",
+    author: "Paola Ferrari",
+    title: "Dueña de su emprendimiento",
+    // avatarUrl: "/images/avatar-maria.jpg"
+  },
+  {
+    quote: "Desde que tengo mi pagina pude digitalizar toda la información de mi negocio y  captar más clientes interesados en obras",
+    author: "Javier Galarza",
+    title: "Ing dueño de constructora",
+    // avatarUrl: "/images/avatar-carlos.jpg"
+  }
+];
+---
+
+<section id="reseñas" class="py-16 sm:py-32">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <h2 class="font-mont text-3xl md:text-4xl font-semibold text-indigo-200">
+        Lo que dicen nuestros clientes
+      </h2>
+      <p class="font-poppins text-neutral-300 text-lg md:text-xl mt-4">
+        Historias de éxito de negocios como el tuyo.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {reviews.map(review => (
+        <figure class="p-6 border border-white/10 rounded-2xl bg-black/20 flex flex-col"> {/* Cambiado a bg-black/20 */}
+          {/* La Cita */}
+          <blockquote class="text-neutral-200 flex-grow">
+            <p class="font-poppins text-base leading-relaxed before:content-['“'] before:mr-1 after:content-['”'] after:ml-1">
+              {review.quote}
+            </p>
+          </blockquote>
+          
+          {/* El Autor */}
+          <figcaption class="mt-6 flex items-center gap-4 border-t border-white/10 pt-6">
+            {/* Placeholder para Avatar */}
+            <div class="w-12 h-12 rounded-full bg-slate-700 flex-shrink-0">
+              {/* Si tuvieras avatarUrl: <img src={review.avatarUrl} alt={review.author} class="w-full h-full object-cover rounded-full" /> */}
+            </div>
+            <div>
+              <div class="font-mont font-semibold text-indigo-300">{review.author}</div>
+              <div class="text-neutral-400 text-sm font-poppins">{review.title}</div>
+            </div>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>
