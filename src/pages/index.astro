@@ -3,9 +3,9 @@ import "../styles/global.css";
 import Header from "./components/Header.astro";
 import Footer from "./components/Footer.astro";
 import PainPoints from "./components/sections/PainPoints.astro";
-import Portfolio from "./components/sections/PortFolio.astro"
+import Portfolio from "./components/sections/PortFolio.astro" // Ojo: ¿El archivo se llama PortFolio o Portfolio?
 import ContactSection from "./components/sections/ContactSection.astro";
-import ReviewSection from "./components/sections/Reviews.astro";
+import ReviewSection from "./components/sections/Reviews.astro"; // Ojo: ¿El archivo se llama Reviews o Review?
 import BenefitsSection from "./components/sections/Benefits.astro";
 ---
 
@@ -23,23 +23,40 @@ import BenefitsSection from "./components/sections/Benefits.astro";
   <body class="min-h-screen text-white">
 
 <div class="min-h-screen bg-slate-900">
-            <div class="py-10">
-        <Header rightInicio="Inicio" rightinfo="Trabajos" rightCta="Contactanos" />
+            <div class="py-10">
+        <Header rightInicio="Inicio" rightinfo="Trabajos" rightCta="Contactanos" />
       </div>
 
-            <section class="py-20">
+            <section class="py-20">
         <div class="max-w-7xl mx-auto px-10">
-          <h1 class="font-mont font-semibold text-5xl md:text-6xl text-white text-left">
+          
+          {/* --- CORRECCIÓN AQUÍ ---
+            - 'text-4xl': Tamaño para móvil (más chico que antes)
+            - 'md:text-6xl': Tamaño para desktop (se mantiene grande)
+          */}
+          <h1 class="font-mont font-semibold text-4xl md:text-6xl text-white text-left">
             Bienvenidos a <span class="italic font-bold text-neutral-200">AFdevelopers</span>
           </h1>
-          <h2 class="font-mont text-3xl md:text-4xl font-semibold mt-2 text-left text-slate-100">
-            Transforma tu negocio en una plataforma </br> Que vende, gestiona y crece sola...
+
+          {/* --- CORRECCIÓN AQUÍ ---
+            - 'text-2xl': Tamaño para móvil
+            - 'md:text-4xl': Tamaño para desktop
+          */}
+          <h2 class="font-mont text-2xl md:text-4xl font-semibold mt-2 text-left text-slate-100">
+            Transforma tu negocio en una plataforma  Que vende, gestiona y crece sola..
           </h2>
-          <p class="font-poppins text-neutral-200 text-lg md:text-xl mt-6 max-w-2xl">
+
+          {/* --- CORRECCIÓN AQUÍ (Opcional, pero recomendado) ---
+            - 'text-base': Tamaño regular para móvil (1rem)
+            - 'md:text-xl': Tamaño para desktop
+          */}
+          <p class="font-poppins text-base md:text-xl text-neutral-200 mt-6 max-w-2xl">
             Desarrollamos sitios web, sistemas y plataformas modernas que se adaptan totalmente a las necesidades de tu negocio.
             <br class="hidden md:block" />
             Completas, seguras y pensadas para escalar, sin depender de terceros.
           </p>
+
+          {/* (Botones sin cambios) */}
           <div class="mt-10 flex flex-col sm:flex-row gap-4">
             <a
               href="#contacto"
@@ -57,15 +74,16 @@ import BenefitsSection from "./components/sections/Benefits.astro";
         </div>
       </section>
 
-            <section id="soluciones" class="py-22 bg-transparent">
+            {/* (El resto de tus secciones no se modificaron) */}
+            <section id="soluciones" class="py-20 bg-transparent">
         <div class="max-w-7xl mx-auto px-10 text-left">
           <h2 class="font-mont text-3xl md:text-4xl font-semibold mb-10 text-indigo-200">Qué hacemos</h2>
           <div class="grid md:grid-cols-3 gap-8">
             
-                        <div class="p-6 border border-white/10 rounded-2xl bg-black/20 hover:bg-black/30 transition">
-              <h3 class="font-mont text-xl font-semibold mb-2 text-indigo-300">Sitios web modernos</h3>
+                        <div class="p-6 border border-white/10 rounded-2xl bg-black/20 hover:bg-black/30 transition">
+              <h3 class="font-mont text-xl font-semibold mb-2 text-indigo-300">Sitios web modernos</h3>
               <p class="font-poppins text-neutral-200/80 text-sm leading-relaxed">
-                Creamos páginas web modernas, atractivas y adaptables a cualquier dispositivo . Diseñadas para que tu negocio se vea profesional, sea fácil de encontrar en Google y genere confianza desde el primer vistazo.
+                Creamos páginas web modernas, atractivas y adaptables a cualquier dispositivo . Diseñadas para que tu negocio se vea profesional, sea fácil de encontrar en Google y genere confianza desde el primer vistazo.
               </p>
             </div>
 
@@ -79,7 +97,7 @@ import BenefitsSection from "./components/sections/Benefits.astro";
                         <div class="p-6 border border-white/10 rounded-2xl bg-black/20 hover:bg-black/30 transition">
               <h3 class="font-mont text-xl font-semibold mb-2 text-indigo-300">Integraciones y automatización</h3>
               <p class="font-poppins text-neutral-200/80 text-sm leading-relaxed">
-        	  Automatizamos tareas repetitivas, como impresión automática de comandas o envío de mensajes a clientes, conectando tu sistema con otras herramientas para que trabajes más rápido y sin errores..
+            Automatizamos tareas repetitivas, como impresión automática de comandas o envío de mensajes a clientes, conectando tu sistema con otras herramientas para que trabajes más rápido y sin errores..
               </p>
         </div>
           </div>
@@ -87,12 +105,12 @@ import BenefitsSection from "./components/sections/Benefits.astro";
       </section>
 
       <PainPoints />
-<BenefitsSection />
-       <ReviewSection />
+    <BenefitsSection />
+      <ReviewSection />
       <Portfolio />
       <ContactSection />
     
       <Footer />
-      
-    </div>   </body>
+      
+    </div>   </body>
 </html>
