@@ -1,13 +1,16 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
+import sitemap from '@astrojs/sitemap';
 
 import icon from 'astro-icon';
 
 export default defineConfig({
+  site: process.env.PUBLIC_SITE_URL || 'https://example.com',
+
   vite: {
     plugins: [tailwindcss()],
   },
 
-  integrations: [icon()],
+  integrations: [icon(), sitemap()],
 });

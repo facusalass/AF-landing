@@ -1,0 +1,76 @@
+---
+// src/components/sections/AboutVideo.astro
+const videoId = "tPX1zxKla1Y";
+const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+---
+
+<section id="conoce-af" class="py-16 sm:py-20 bg-transparent">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
+    <div class="relative pl-6 sm:pl-10 text-left" data-aos="fade-up">
+      <span class="absolute left-0 top-4 h-3 w-3 rounded-full border border-indigo-200/80 bg-slate-900"></span>
+      <h2 class="font-mont text-3xl md:text-4xl font-semibold mb-4 text-indigo-200">
+        Conoce a AFdevelopers
+      </h2>
+      <p class="font-poppins text-neutral-300 text-base sm:text-lg md:text-xl max-w-2xl mb-10 sm:mb-12">
+        Detras de cada linea de codigo hay un equipo enfocado en hacer escalar tu negocio. Mira como trabajamos.
+      </p>
+    </div>
+
+    <div class="flex justify-center" data-aos="fade-up" data-aos-delay="150">
+      <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-black/40 shadow-[0_0_30px_rgba(129,140,248,0.15)]">
+        <button
+          id="video-placeholder"
+          type="button"
+          class="group relative block w-[84vw] max-w-[340px] aspect-[340/620]"
+          aria-label="Reproducir video de AFdevelopers"
+        >
+          <img
+            src={thumbnailUrl}
+            alt="Miniatura del video de AFdevelopers"
+            class="h-full w-full object-cover"
+            loading="lazy"
+            decoding="async"
+            width="340"
+            height="620"
+          />
+          <span class="absolute inset-0 bg-black/35 transition group-hover:bg-black/25"></span>
+          <span class="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-slate-900 shadow-lg pointer-events-none">
+            <svg
+              class="h-7 w-7 translate-x-[1px]"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.8-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z" />
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  const container = document.querySelector("#video-placeholder");
+
+  if (container) {
+    container.addEventListener(
+      "click",
+      () => {
+        const iframe = document.createElement("iframe");
+        iframe.className = "w-[84vw] max-w-[340px] aspect-[340/620]";
+        iframe.src = "https://www.youtube.com/embed/tPX1zxKla1Y?autoplay=1&rel=0";
+        iframe.title = "AF video final";
+        iframe.loading = "lazy";
+        iframe.allow =
+          "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        iframe.allowFullscreen = true;
+        iframe.setAttribute("frameborder", "0");
+
+        container.replaceWith(iframe);
+      },
+      { once: true }
+    );
+  }
+</script>

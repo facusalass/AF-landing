@@ -1,0 +1,111 @@
+---
+const {
+  rightinfo = "Acerca de",
+  rightCta = "Proyectos",
+  ctaHref = "#",
+  rightInicio = "Inicio",
+} = Astro.props;
+---
+
+<header class="fixed top-0 left-0 w-full z-50 bg-neutral-900/60 shadow-lg text-white border-b border-white/10">
+  <div class="mx-auto max-w-7xl h-20 px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3">
+    <a href="/" class="font-mont text-white text-xl sm:text-2xl tracking-tight" aria-label="Ir al inicio de AFdevelopers">
+      <span class="italic font-semibold">AF</span>
+      <span class="not-italic font-normal">developers</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-12 font-poppins" aria-label="Navegación principal">
+      <a href="#inicio" class="text-md text-neutral-300 hover:text-white transition cursor-pointer">{rightInicio}</a>
+      <a href="#proyectos" class="text-md text-neutral-300 hover:text-white transition cursor-pointer">{rightinfo}</a>
+      <a
+        href={ctaHref}
+        class="inline-flex items-center rounded-full border border-indigo-400/40 px-5 py-1.5 text-md font-medium text-indigo-100 hover:bg-gradient-to-r hover:from-indigo-400 hover:to-cyan-400 hover:text-slate-900 transition"
+      >
+        {rightCta}
+      </a>
+    </nav>
+
+    <button
+      id="menu-toggle"
+      class="md:hidden text-neutral-300 hover:text-white transition"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="menu-overlay"
+      type="button"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+  </div>
+
+  <div
+    id="menu-overlay"
+    class="hidden md:hidden absolute top-20 left-0 w-full z-40 bg-slate-950/95 shadow-xl"
+    role="menu"
+    aria-label="Menú móvil"
+  >
+    <div class="flex flex-col items-center py-8 gap-6">
+      <a href="#inicio" class="text-xl text-neutral-300 hover:text-white transition cursor-pointer">{rightInicio}</a>
+      <a href="#proyectos" class="text-xl text-neutral-300 hover:text-white transition cursor-pointer">{rightinfo}</a>
+      <a
+        href={ctaHref}
+        class="inline-flex items-center rounded-full border border-indigo-400/40 px-6 py-2 text-lg font-medium text-indigo-100 hover:bg-gradient-to-r hover:from-indigo-400 hover:to-cyan-400 hover:text-slate-900 transition"
+      >
+        {rightCta}
+      </a>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  const toggleBtn = document.getElementById("menu-toggle");
+  const overlay = document.getElementById("menu-overlay");
+
+  if (toggleBtn && overlay) {
+    const setExpanded = (isOpen) => {
+      toggleBtn.setAttribute("aria-expanded", String(isOpen));
+    };
+
+    const closeMenu = () => {
+      overlay.classList.add("hidden");
+      setExpanded(false);
+    };
+
+    const toggleMenu = () => {
+      const isHidden = overlay.classList.toggle("hidden");
+      setExpanded(!isHidden);
+    };
+
+    toggleBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    overlay.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", (e) => {
+      const target = e.target instanceof Element ? e.target : null;
+      if (!target) return;
+
+      const clickedToggle = target.closest("#menu-toggle");
+      if (!overlay.classList.contains("hidden") && !overlay.contains(target) && !clickedToggle) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !overlay.classList.contains("hidden")) {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768) {
+        closeMenu();
+      }
+    });
+  }
+</script>
