@@ -55,12 +55,12 @@ const {
     role="menu"
     aria-label="Menú móvil"
   >
-    <div class="flex flex-col items-center py-8 gap-6">
-      <a href="#inicio" class="text-xl text-neutral-300 hover:text-white transition cursor-pointer">{rightInicio}</a>
-      <a href="#proyectos" class="text-xl text-neutral-300 hover:text-white transition cursor-pointer">{rightinfo}</a>
+    <div class="flex flex-row items-center justify-center gap-4 sm:gap-6 py-4 px-4">
+      <a href="#inicio" class="text-base sm:text-lg text-neutral-300 hover:text-white transition cursor-pointer whitespace-nowrap">{rightInicio}</a>
+      <a href="#proyectos" class="text-base sm:text-lg text-neutral-300 hover:text-white transition cursor-pointer whitespace-nowrap">{rightinfo}</a>
       <a
         href={ctaHref}
-        class="inline-flex items-center rounded-full border border-indigo-400/40 px-6 py-2 text-lg font-medium text-indigo-100 hover:bg-gradient-to-r hover:from-indigo-400 hover:to-cyan-400 hover:text-slate-900 hover:scale-105 transition-all duration-300"
+        class="inline-flex items-center rounded-full border border-indigo-400/40 px-4 py-1.5 text-sm sm:text-base font-medium text-indigo-100 hover:bg-gradient-to-r hover:from-indigo-400 hover:to-cyan-400 hover:text-slate-900 hover:scale-105 transition-all duration-300 whitespace-nowrap"
       >
         {rightCta}
       </a>
