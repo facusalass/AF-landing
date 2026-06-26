@@ -100,17 +100,6 @@ const structuredData = [
     <meta name="twitter:image" content={socialImageUrl} />
     <meta name="twitter:site" content="@afdevelopers" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,600&family=Poppins:wght@400;500;600&display=optional"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,600&family=Poppins:wght@400;500;600&display=optional"
-    />
     <link rel="preconnect" href="https://res.cloudinary.com" />
     <link rel="dns-prefetch" href="https://i.ytimg.com" />
     <link rel="dns-prefetch" href="https://www.youtube.com" />
@@ -239,12 +228,14 @@ const structuredData = [
 
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
+        var el = entry.target;
+        var delay = el.getAttribute("data-aos-delay");
         if (entry.isIntersecting) {
-          var el = entry.target;
-          var delay = el.getAttribute("data-aos-delay");
           if (delay) el.style.transitionDelay = delay + "ms";
           el.classList.add("aos-visible");
-          observer.unobserve(el);
+        } else {
+          el.classList.remove("aos-visible");
+          if (delay) el.style.transitionDelay = "0ms";
         }
       });
     }, { threshold: 0, rootMargin: "0px 0px 30px 0px" });

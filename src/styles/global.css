@@ -1,6 +1,14 @@
 /* 1) Tailwind v4 */
 @import "tailwindcss";
 
+/* 1.5) Self-hosted fonts - latin subset only, zero third-party cookies */
+@import "@fontsource/montserrat/latin-400.css";
+@import "@fontsource/montserrat/latin-600.css";
+@import "@fontsource/montserrat/latin-600-italic.css";
+@import "@fontsource/poppins/latin-400.css";
+@import "@fontsource/poppins/latin-500.css";
+@import "@fontsource/poppins/latin-600.css";
+
 /* 2) Tus utilidades */
 @layer utilities {
   .font-mont {
@@ -17,6 +25,11 @@
 
 html {
   scroll-padding-top: 5rem;
+}
+
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
 }
 
 [data-aos] {
