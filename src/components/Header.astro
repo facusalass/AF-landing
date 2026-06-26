@@ -1,4 +1,5 @@
 ---
+const logoUrl = "https://res.cloudinary.com/dwqxdensk/image/upload/f_auto,q_auto,w_80,h_80,c_fit/v1782446017/aflogo_uzslpd.png";
 const {
   rightinfo = "Acerca de",
   rightCta = "Proyectos",
@@ -9,17 +10,26 @@ const {
 
 <header class="fixed top-0 left-0 w-full z-50 bg-neutral-900/60 shadow-lg text-white border-b border-white/10">
   <div class="mx-auto max-w-7xl h-20 px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3">
-    <a href="/" class="font-mont text-white text-xl sm:text-2xl tracking-tight" aria-label="Ir al inicio de AFdevelopers">
-      <span class="italic font-semibold">AF</span>
-      <span class="not-italic font-normal">developers</span>
+    <a href="/" class="flex items-center gap-2.5 group" aria-label="Ir al inicio de AFdevelopers">
+      <img
+        src={logoUrl}
+        alt="AFdevelopers"
+        class="h-9 sm:h-10 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+        width="40"
+        height="40"
+        fetchpriority="high"
+      />
+      <span class="font-mont text-white text-lg sm:text-xl tracking-tight">
+        <span class="italic font-semibold">AF</span><span class="not-italic font-normal">developers</span>
+      </span>
     </a>
 
     <nav class="hidden md:flex items-center gap-12 font-poppins" aria-label="Navegación principal">
-      <a href="#inicio" class="text-md text-neutral-300 hover:text-white transition cursor-pointer">{rightInicio}</a>
-      <a href="#proyectos" class="text-md text-neutral-300 hover:text-white transition cursor-pointer">{rightinfo}</a>
+      <a href="#inicio" class="text-md text-neutral-300 hover:text-white hover:translate-y-[-1px] transition-colors transition-transform duration-200 cursor-pointer">{rightInicio}</a>
+      <a href="#proyectos" class="text-md text-neutral-300 hover:text-white hover:translate-y-[-1px] transition-colors transition-transform duration-200 cursor-pointer">{rightinfo}</a>
       <a
         href={ctaHref}
-        class="inline-flex items-center rounded-full border border-indigo-400/40 px-5 py-1.5 text-md font-medium text-indigo-100 hover:bg-gradient-to-r hover:from-indigo-400 hover:to-cyan-400 hover:text-slate-900 transition"
+        class="inline-flex items-center rounded-full border border-indigo-400/40 px-5 py-1.5 text-md font-medium text-indigo-100 hover:bg-gradient-to-r hover:from-indigo-400 hover:to-cyan-400 hover:text-slate-900 hover:scale-105 transition-colors transition-transform duration-300"
       >
         {rightCta}
       </a>
@@ -41,7 +51,7 @@ const {
 
   <div
     id="menu-overlay"
-    class="hidden md:hidden absolute top-20 left-0 w-full z-40 bg-slate-950/95 shadow-xl"
+    class="md:hidden absolute top-20 left-0 w-full z-40 bg-slate-950/95 shadow-xl overflow-hidden transition-all duration-300 ease-out max-h-0 opacity-0 pointer-events-none"
     role="menu"
     aria-label="Menú móvil"
   >
@@ -50,7 +60,7 @@ const {
       <a href="#proyectos" class="text-xl text-neutral-300 hover:text-white transition cursor-pointer">{rightinfo}</a>
       <a
         href={ctaHref}
-        class="inline-flex items-center rounded-full border border-indigo-400/40 px-6 py-2 text-lg font-medium text-indigo-100 hover:bg-gradient-to-r hover:from-indigo-400 hover:to-cyan-400 hover:text-slate-900 transition"
+        class="inline-flex items-center rounded-full border border-indigo-400/40 px-6 py-2 text-lg font-medium text-indigo-100 hover:bg-gradient-to-r hover:from-indigo-400 hover:to-cyan-400 hover:text-slate-900 hover:scale-105 transition-all duration-300"
       >
         {rightCta}
       </a>
@@ -63,48 +73,60 @@ const {
   const overlay = document.getElementById("menu-overlay");
 
   if (toggleBtn && overlay) {
+    const openClasses = ["max-h-96", "opacity-100", "pointer-events-auto"];
+    const closedClasses = ["max-h-0", "opacity-0", "pointer-events-none"];
+
     const setExpanded = (isOpen) => {
       toggleBtn.setAttribute("aria-expanded", String(isOpen));
+      toggleBtn.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
     };
 
-    const closeMenu = () => {
-      overlay.classList.add("hidden");
+    const open = () => {
+      overlay.classList.remove(...closedClasses);
+      overlay.classList.add(...openClasses);
+      setExpanded(true);
+    };
+
+    const close = () => {
+      overlay.classList.remove(...openClasses);
+      overlay.classList.add(...closedClasses);
       setExpanded(false);
     };
 
-    const toggleMenu = () => {
-      const isHidden = overlay.classList.toggle("hidden");
-      setExpanded(!isHidden);
+    const toggle = () => {
+      if (overlay.classList.contains("max-h-0")) {
+        open();
+      } else {
+        close();
+      }
     };
 
     toggleBtn.addEventListener("click", (e) => {
       e.stopPropagation();
-      toggleMenu();
+      toggle();
     });
 
     overlay.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", closeMenu);
+      link.addEventListener("click", close);
     });
 
     document.addEventListener("click", (e) => {
-      const target = e.target instanceof Element ? e.target : null;
-      if (!target) return;
-
+      const target = e.target;
       const clickedToggle = target.closest("#menu-toggle");
-      if (!overlay.classList.contains("hidden") && !overlay.contains(target) && !clickedToggle) {
-        closeMenu();
+      if (!overlay.classList.contains("max-h-0") && !overlay.contains(target) && !clickedToggle) {
+        close();
       }
     });
 
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && !overlay.classList.contains("hidden")) {
-        closeMenu();
+      if (e.key === "Escape" && !overlay.classList.contains("max-h-0")) {
+        close();
       }
     });
 
     window.addEventListener("resize", () => {
       if (window.innerWidth >= 768) {
-        closeMenu();
+        close();
       }
     });
   }

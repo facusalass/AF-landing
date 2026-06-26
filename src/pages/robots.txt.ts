@@ -2,7 +2,8 @@ import type { APIRoute } from "astro";
 
 export const GET: APIRoute = ({ site }) => {
   const baseUrl = site ?? new URL("https://example.com");
-  const hasConfiguredSite = baseUrl.hostname !== "example.com";
+  const isLocalDev = baseUrl.hostname === "localhost";
+  const hasConfiguredSite = baseUrl.hostname !== "example.com" || isLocalDev;
   const sitemapUrl = new URL("/sitemap-index.xml", baseUrl).toString();
 
   const body = hasConfiguredSite
@@ -14,7 +15,7 @@ Sitemap: ${sitemapUrl}
     : `User-agent: *
 Disallow: /
 
-# Configure PUBLIC_SITE_URL before deploy to enable indexing
+# Configura PUBLIC_SITE_URL antes de deployar para habilitar el indexing
 `;
 
   return new Response(body, {

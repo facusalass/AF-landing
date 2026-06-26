@@ -44,17 +44,19 @@ const benefits = [
     </div>
 
     <div class="space-y-14 sm:space-y-16 lg:space-y-24">
-      {benefits.map((benefit, index) => (
-        <div class={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ${index % 2 !== 0 ? 'lg:grid-flow-col-dense' : ''}`} data-aos="fade-up">
+      {benefits.map((benefit, index) => {
+        const aosType = index % 2 === 0 ? "fade-right" : "fade-left";
+        return (
+        <div class={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ${index % 2 !== 0 ? 'lg:grid-flow-col-dense' : ''}`} data-aos={aosType} data-aos-delay={100}>
           
           {/* Columna del Icono/Visual */}
           <div class={`flex justify-center ${index % 2 !== 0 ? 'lg:order-last' : ''}`}>
              {/* Un contenedor visualmente atractivo para el ícono */}
-             <div class="relative w-40 h-40 sm:w-48 sm:h-48 lg:w-64 lg:h-64 flex items-center justify-center">
+             <div class="group relative w-40 h-40 sm:w-48 sm:h-48 lg:w-64 lg:h-64 flex items-center justify-center">
                  {/* Fondo sutil */}
-                <div class="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-xl"></div>
+                <div class="absolute inset-0 rounded-full bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 blur-xl group-hover:blur-2xl transition-all duration-500"></div>
                  {/* Icono */}
-                <Icon name={benefit.iconName} class="relative h-16 w-16 sm:h-20 sm:w-20 lg:h-28 lg:w-28 text-cyan-300" />
+                <Icon name={benefit.iconName} class="relative h-16 w-16 sm:h-20 sm:w-20 lg:h-28 lg:w-28 text-cyan-300 group-hover:scale-110 transition-transform duration-300" />
              </div>
           </div>
 
@@ -66,11 +68,11 @@ const benefits = [
             <p class="font-poppins text-neutral-200/90 text-base lg:text-lg leading-relaxed">
               {benefit.description}
             </p>
-            {/* Opcional: Podrías añadir un pequeño link "Ver más" si fuera necesario */}
           </div>
 
         </div>
-      ))}
+        );
+      })}
     </div>
   </div>
 </section>

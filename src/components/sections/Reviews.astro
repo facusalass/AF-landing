@@ -20,10 +20,10 @@ const reviews = [
     avatarUrl: "https://res.cloudinary.com/dech9w3wx/image/upload/v1777519851/608767837_18548098465019445_2618285411734250384_n_uz9ztv.jpg"
   },
   {
-    quote: "Desde que tengo mi pagina puedo recepcionar mis pedidos con claridad y tener control de mis ventas",
-    author: "Dylan Rojas",
-    title: "Dueño, Negocio gastronomico",
-    avatarUrl: "https://res.cloudinary.com/dwqxdensk/image/upload/v1774491741/image_so7u3x.png"
+    quote: "Gracias a la landing page que me hicieron, mi negocio de repuestos de Mercedes Benz ahora llega a más clientes, tanto en la provincia como en todo el país. Muy recomendados.",
+    author: "Alejandro Kiszcka",
+    title: "Dueño, Kiszcka Repuestos",
+    avatarUrl: "https://res.cloudinary.com/dwqxdensk/image/upload/v1782445784/icon_him7i3.png"
   }
 ];
 ---
@@ -41,8 +41,8 @@ const reviews = [
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {reviews.map((review) => (
-        <figure class="p-6 border border-white/10 rounded-2xl bg-black/20 flex flex-col transition-all duration-300 hover:border-white/20" data-aos="fade-up">
+      {reviews.map((review, index) => (
+        <figure class="group p-6 border border-white/10 rounded-2xl bg-black/20 flex flex-col transition-colors transition-transform duration-300 hover:border-indigo-400/30 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(129,140,248,0.1)]" data-aos="zoom-in" data-aos-delay={index * 120}>
           {/* La Cita */}
           <blockquote class="text-neutral-200 flex-grow">
             <p class="font-poppins text-base leading-relaxed before:content-['“'] before:mr-1 after:content-['”'] after:ml-1">

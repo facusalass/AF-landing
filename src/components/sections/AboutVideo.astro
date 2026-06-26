@@ -27,16 +27,16 @@ const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
           <img
             src={thumbnailUrl}
             alt="Miniatura del video de AFdevelopers"
-            class="h-full w-full object-cover"
+            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
             decoding="async"
             width="340"
             height="620"
           />
-          <span class="absolute inset-0 bg-black/35 transition group-hover:bg-black/25"></span>
-          <span class="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-slate-900 shadow-lg pointer-events-none">
+          <span class="absolute inset-0 bg-black/35 transition group-hover:bg-black/20"></span>
+          <span class="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-slate-900 shadow-lg pointer-events-none group-hover:scale-110 group-hover:bg-white transition-colors transition-transform duration-300">
             <svg
-              class="h-7 w-7 translate-x-[1px]"
+              class="h-7 w-7 translate-x-[1px] group-hover:scale-110 transition-transform duration-300"
               viewBox="0 0 24 24"
               fill="currentColor"
               aria-hidden="true"

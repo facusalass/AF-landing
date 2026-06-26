@@ -13,44 +13,76 @@ import AboutVideo from "../components/sections/AboutVideo.astro";
 const siteUrl = Astro.site ? new URL(Astro.site) : new URL("https://example.com");
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const socialImageUrl = new URL("/og-image.svg", siteUrl).toString();
-const hasConfiguredSite = siteUrl.hostname !== "example.com";
+const isLocalDev = Astro.url.hostname === "localhost";
+const hasConfiguredSite = siteUrl.hostname !== "example.com" || isLocalDev;
 const pageTitle = "AFdevelopers | Software a medida";
 const pageDescription =
-  "Creamos soluciones digitales personalizadas: sitios web, sistemas y plataformas que impulsan tu negocio.";
+  "Creamos soluciones digitales personalizadas: sitios web, sistemas y plataformas que impulsan tu negocio. Desarrollo profesional en Argentina.";
+const pageKeywords =
+  "desarrollo web, software a medida, páginas web, sistemas web, automatización, Argentina, AFdevelopers";
 const robotsContent = hasConfiguredSite
   ? "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
   : "noindex, nofollow";
 const structuredData = [
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "ProfessionalService",
+    "@id": siteUrl.toString(),
     name: "AFdevelopers",
     url: siteUrl.toString(),
     logo: new URL("/favicon.svg", siteUrl).toString(),
     email: "afdevelopers12@gmail.com",
-    sameAs: ["https://www.instagram.com/afdeveloperss/"],
+    description: pageDescription,
+    foundingDate: "2024",
+    telephone: "+543624250501",
+    areaServed: { "@type": "Country", name: "Argentina" },
+    address: { "@type": "PostalAddress", addressCountry: "AR" },
+    sameAs: [
+      "https://www.instagram.com/afdeveloperss/",
+    ],
   },
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": new URL("/#website", siteUrl).toString(),
     name: "AFdevelopers",
     url: siteUrl.toString(),
     inLanguage: "es-AR",
+    publisher: { "@type": "Organization", "@id": siteUrl.toString() },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": canonicalUrl,
+    url: canonicalUrl,
+    name: pageTitle,
+    description: pageDescription,
+    inLanguage: "es-AR",
+    isPartOf: { "@type": "WebSite", "@id": new URL("/#website", siteUrl).toString() },
+    about: { "@type": "Organization", "@id": siteUrl.toString() },
+    primaryImageOfPage: { "@type": "ImageObject", url: socialImageUrl },
   },
 ];
 ---
 
-<html lang="es">
+<html lang="es-AR">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content={pageDescription} />
+    <meta name="keywords" content={pageKeywords} />
     <meta name="author" content="AFdevelopers" />
     <meta name="robots" content={robotsContent} />
     <meta name="theme-color" content="#020617" />
+    <meta name="application-name" content="AFdevelopers" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="language" content="es-AR" />
 
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" hreflang="es-AR" href={canonicalUrl} />
+    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" type="application/xml" href="/sitemap-index.xml" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="AFdevelopers" />
@@ -60,22 +92,31 @@ const structuredData = [
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={socialImageUrl} />
     <meta property="og:image:alt" content="AFdevelopers - Desarrollo de software a medida" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:site" content="@afdevelopers" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,600&family=Poppins:wght@400;500;600&display=swap"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,600&family=Poppins:wght@400;500;600&display=optional"
     />
-    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,600&family=Poppins:wght@400;500;600&display=optional"
+    />
+    <link rel="preconnect" href="https://res.cloudinary.com" />
     <link rel="dns-prefetch" href="https://i.ytimg.com" />
     <link rel="dns-prefetch" href="https://www.youtube.com" />
     <link rel="dns-prefetch" href="https://calendly.com" />
+    <link rel="dns-prefetch" href="https://api.web3forms.com" />
 
     <title>{pageTitle}</title>
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
@@ -83,8 +124,8 @@ const structuredData = [
 
   <body class="min-h-screen text-white selection:bg-indigo-500/30">
     <div class="fixed inset-0 z-0 bg-slate-900">
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(129,140,248,0.15),transparent)]"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_100%_100%,rgba(34,211,238,0.1),transparent)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(129,140,248,0.12),transparent)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_100%_100%,rgba(34,211,238,0.08),transparent)]"></div>
     </div>
 
     <div class="relative z-10">
@@ -93,32 +134,32 @@ const structuredData = [
       </div>
 
       <main>
-        <section id="inicio" class="py-16 sm:py-20" data-aos="fade-up">
-          <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10" data-aos="fade-up" data-aos-delay="100">
-            <h1 class="font-mont font-semibold text-3xl sm:text-4xl md:text-6xl text-white text-left">
-              Bienvenidos a <span class="italic font-bold text-neutral-200">AFdevelopers</span>
+        <section id="inicio" class="py-16 sm:py-20" data-aos="fade-down" itemscope itemtype="https://schema.org/Organization">
+          <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10">
+            <h1 class="font-mont font-semibold text-3xl sm:text-4xl md:text-6xl text-white text-left" data-aos="fade-right" data-aos-delay="100">
+              Bienvenidos a <span class="italic font-bold text-neutral-200" itemprop="name">AFdevelopers</span>
             </h1>
 
-            <h2 class="font-mont text-xl sm:text-2xl md:text-4xl font-semibold mt-3 text-left text-slate-100 leading-snug">
+            <h2 class="font-mont text-xl sm:text-2xl md:text-4xl font-semibold mt-3 text-left text-slate-100 leading-snug" data-aos="fade-right" data-aos-delay="200">
               Transforma tu negocio en una plataforma <br class="hidden sm:block" /> Que vende, gestiona y crece sola.
             </h2>
 
-            <p class="font-poppins text-sm sm:text-base md:text-xl text-neutral-200 mt-6 max-w-2xl leading-relaxed">
+            <p class="font-poppins text-sm sm:text-base md:text-xl text-neutral-200 mt-6 max-w-2xl leading-relaxed" data-aos="fade-right" data-aos-delay="300" itemprop="description">
               Desarrollamos sitios web, sistemas y plataformas modernas que se adaptan totalmente a las necesidades de tu negocio.
               <br class="hidden md:block" />
               Completas, seguras y pensadas para escalar, sin depender de terceros.
             </p>
 
-            <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay="400">
               <a
                 href="#contacto"
-                class="w-full sm:w-auto text-center px-6 py-3 rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400 text-slate-900 text-base sm:text-lg font-medium font-poppins hover:from-indigo-300 hover:to-cyan-300 transition"
+                class="w-full sm:w-auto text-center px-6 py-3 rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400 text-slate-900 text-base sm:text-lg font-medium font-poppins hover:from-indigo-300 hover:to-cyan-300 hover:scale-105 transition-colors transition-transform duration-300"
               >
                 Contanos tu idea
               </a>
               <a
                 href="#proyectos"
-                class="w-full sm:w-auto text-center px-6 py-3 rounded-full border border-indigo-300/60 text-indigo-100 text-base sm:text-lg font-poppins hover:border-cyan-300 hover:text-cyan-200 transition"
+                class="w-full sm:w-auto text-center px-6 py-3 rounded-full border border-indigo-300/60 text-indigo-100 text-base sm:text-lg font-poppins hover:border-cyan-300 hover:text-cyan-200 hover:scale-105 transition-colors transition-transform duration-300"
               >
                 Ver trabajos
               </a>
@@ -133,22 +174,22 @@ const structuredData = [
             <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-10 text-left" data-aos="fade-up" data-aos-delay="100">
               <h2 class="font-mont text-3xl md:text-4xl font-semibold mb-10 text-indigo-200">Qué hacemos</h2>
               <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 border border-white/10 rounded-2xl bg-black/20 hover:border-white/20 hover:bg-black/40 transition-all duration-300" data-aos="fade-up">
-                  <h3 class="font-mont text-xl font-semibold mb-2 text-indigo-300">Sitios web modernos</h3>
+                <div class="group p-6 border border-white/10 rounded-2xl bg-black/20 hover:border-indigo-400/30 hover:bg-black/40 hover:-translate-y-1 transition-colors transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+                  <h3 class="font-mont text-xl font-semibold mb-2 text-indigo-300 group-hover:text-cyan-300 transition-colors duration-300">Sitios web modernos</h3>
                   <p class="font-poppins text-neutral-200/80 text-sm leading-relaxed">
                     Creamos páginas web modernas, atractivas y adaptables a cualquier dispositivo. Diseñadas para que tu negocio se vea profesional, sea fácil de encontrar en Google y genere confianza desde el primer vistazo.
                   </p>
                 </div>
 
-                <div class="p-6 border border-white/10 rounded-2xl bg-black/20 hover:border-white/20 hover:bg-black/40 transition-all duration-300" data-aos="fade-up">
-                  <h3 class="font-mont text-xl font-semibold mb-2 text-indigo-300">Sistemas a medida</h3>
+                <div class="group p-6 border border-white/10 rounded-2xl bg-black/20 hover:border-indigo-400/30 hover:bg-black/40 hover:-translate-y-1 transition-colors transition-transform duration-300" data-aos="fade-up" data-aos-delay="250">
+                  <h3 class="font-mont text-xl font-semibold mb-2 text-indigo-300 group-hover:text-cyan-300 transition-colors duration-300">Sistemas a medida</h3>
                   <p class="font-poppins text-neutral-200/80 text-sm leading-relaxed">
                     Desarrollamos sistemas internos y paneles de administración hechos a medida, para que puedas gestionar tu negocio de forma simple, rápida y organizada. Todo adaptado exactamente a la forma en que trabajás.
                   </p>
                 </div>
 
-                <div class="p-6 border border-white/10 rounded-2xl bg-black/20 hover:border-white/20 hover:bg-black/40 transition-all duration-300" data-aos="fade-up">
-                  <h3 class="font-mont text-xl font-semibold mb-2 text-indigo-300">Integraciones y automatización</h3>
+                <div class="group p-6 border border-white/10 rounded-2xl bg-black/20 hover:border-indigo-400/30 hover:bg-black/40 hover:-translate-y-1 transition-colors transition-transform duration-300" data-aos="fade-up" data-aos-delay="400">
+                  <h3 class="font-mont text-xl font-semibold mb-2 text-indigo-300 group-hover:text-cyan-300 transition-colors duration-300">Integraciones y automatización</h3>
                   <p class="font-poppins text-neutral-200/80 text-sm leading-relaxed">
                     Automatizamos tareas repetitivas, como impresión automática de comandas o envío de mensajes a clientes, conectando tu sistema con otras herramientas para que trabajes más rápido y sin errores.
                   </p>
@@ -171,39 +212,59 @@ const structuredData = [
   </body>
 
   <script>
+    document.addEventListener("click", (e) => {
+      const link = e.target.closest('a[href^="#"]');
+      if (link) {
+        const id = link.getAttribute("href").slice(1);
+        const el = document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    });
+
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const lowMemoryDevice = typeof navigator.deviceMemory === "number" && navigator.deviceMemory <= 4;
 
     if (!prefersReducedMotion && !lowMemoryDevice) {
-      const { default: AOS } = await import("aos");
-      let resizeTimeout;
-      const onResize = () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-          AOS.refresh();
-        }, 200);
+      const loadAOS = async () => {
+        const { default: AOS } = await import("aos");
+        let resizeTimeout;
+        const onResize = () => {
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            AOS.refresh();
+          }, 200);
+        };
+
+        AOS.init({
+          duration: 800,
+          easing: "ease-out-cubic",
+          once: true,
+          mirror: false,
+          offset: 80,
+          throttleDelay: 200,
+          debounceDelay: 150,
+          disableMutationObserver: true,
+          startEvent: "DOMContentLoaded",
+        });
+
+        window.addEventListener("resize", onResize, { passive: true });
+        window.addEventListener(
+          "pagehide",
+          () => {
+            window.removeEventListener("resize", onResize);
+          },
+          { once: true }
+        );
       };
 
-      AOS.init({
-        duration: 700,
-        easing: "ease-out-cubic",
-        once: false,
-        mirror: true,
-        offset: 40,
-        throttleDelay: 80,
-        debounceDelay: 80,
-        disableMutationObserver: true,
-        startEvent: "DOMContentLoaded",
-      });
-
-      window.addEventListener("resize", onResize, { passive: true });
-      window.addEventListener(
-        "pagehide",
-        () => {
-          window.removeEventListener("resize", onResize);
-        },
-        { once: true }
-      );
+      if ("requestIdleCallback" in window) {
+        requestIdleCallback(loadAOS, { timeout: 4000 });
+      } else {
+        setTimeout(loadAOS, 500);
+      }
     }
   </script>
 </html>
