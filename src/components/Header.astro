@@ -54,11 +54,11 @@ const {
 
   <div
     id="menu-overlay"
-    class="md:hidden absolute top-20 left-0 w-full z-40 bg-slate-950/95 shadow-xl overflow-hidden transition-all duration-300 ease-out max-h-0 opacity-0 pointer-events-none"
+    class="md:hidden absolute top-20 left-0 w-full z-40 bg-slate-950/95 shadow-xl transition-all duration-300 ease-out max-h-0 opacity-0 pointer-events-none"
     role="menu"
     aria-label="Menú móvil"
   >
-    <div class="flex flex-row items-center justify-center gap-5 sm:gap-6 py-4 px-4">
+    <div class="flex flex-row flex-nowrap items-center justify-start sm:justify-center gap-3 sm:gap-6 py-4 px-4 overflow-x-auto">
       <a href="#inicio" class="text-base sm:text-lg text-white/80 hover:text-white transition cursor-pointer whitespace-nowrap">{rightInicio}</a>
       <a href={conocenosHref} class="text-base sm:text-lg text-white/80 hover:text-white transition cursor-pointer whitespace-nowrap">{rightConocenos}</a>
       <a href="#proyectos" class="text-base sm:text-lg text-white/80 hover:text-white transition cursor-pointer whitespace-nowrap">{rightinfo}</a>
