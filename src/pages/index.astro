@@ -108,7 +108,7 @@ const structuredData = [
 
     <title>{pageTitle}</title>
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
-    <style id="critical-css">
+    <style id="critical-css" is:inline>
       body{background-color:#020617;color:#fff;font-family:system-ui,-apple-system,sans-serif}
       .bg-slate-900{background-color:#0f172a}
       .min-h-screen{min-height:100vh}

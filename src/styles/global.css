@@ -1,21 +1,13 @@
 /* 1) Tailwind v4 */
 @import "tailwindcss";
 
-/* 1.5) Self-hosted fonts - latin subset only, zero third-party cookies */
-@import "@fontsource/montserrat/latin-400.css";
-@import "@fontsource/montserrat/latin-600.css";
-@import "@fontsource/montserrat/latin-600-italic.css";
-@import "@fontsource/poppins/latin-400.css";
-@import "@fontsource/poppins/latin-500.css";
-@import "@fontsource/poppins/latin-600.css";
-
 /* 2) Tus utilidades */
 @layer utilities {
   .font-mont {
-    font-family: "Montserrat", ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+    font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
   .font-poppins {
-    font-family: "Poppins", ui-sans-serif, system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+    font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
 }
 
