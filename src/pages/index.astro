@@ -100,11 +100,7 @@ const structuredData = [
     <meta name="twitter:image" content={socialImageUrl} />
     <meta name="twitter:site" content="@afdevelopers" />
 
-    <link rel="preconnect" href="https://res.cloudinary.com" />
-    <link rel="dns-prefetch" href="https://i.ytimg.com" />
-    <link rel="dns-prefetch" href="https://www.youtube.com" />
-    <link rel="dns-prefetch" href="https://calendly.com" />
-    <link rel="dns-prefetch" href="https://api.web3forms.com" />
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
 
     <title>{pageTitle}</title>
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
