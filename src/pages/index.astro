@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-import "aos/dist/aos.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import PainPoints from "../components/sections/PainPoints.astro";
@@ -120,6 +119,20 @@ const structuredData = [
 
     <title>{pageTitle}</title>
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+    <style id="critical-css">
+      body{background-color:#020617;color:#fff;font-family:system-ui,-apple-system,sans-serif}
+      .bg-slate-900{background-color:#0f172a}
+      .min-h-screen{min-height:100vh}
+      .z-10{z-index:10}
+      .z-0{z-index:0}
+      .fixed{position:fixed}
+      .relative{position:relative}
+      .inset-0{inset:0}
+      .py-8{padding-top:2rem;padding-bottom:2rem}
+      .px-5{padding-left:1.25rem;padding-right:1.25rem}
+      .max-w-7xl{max-width:80rem}
+      .mx-auto{margin-left:auto;margin-right:auto}
+    </style>
   </head>
 
   <body class="min-h-screen text-white selection:bg-indigo-500/30">
@@ -211,7 +224,7 @@ const structuredData = [
     </div>
   </body>
 
-  <script>
+  <script is:inline>
     document.addEventListener("click", (e) => {
       const link = e.target.closest('a[href^="#"]');
       if (link) {
@@ -224,47 +237,20 @@ const structuredData = [
       }
     });
 
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const lowMemoryDevice = typeof navigator.deviceMemory === "number" && navigator.deviceMemory <= 4;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var delay = el.getAttribute("data-aos-delay");
+          if (delay) el.style.transitionDelay = delay + "ms";
+          el.classList.add("aos-visible");
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0, rootMargin: "0px 0px 30px 0px" });
 
-    if (!prefersReducedMotion && !lowMemoryDevice) {
-      const loadAOS = async () => {
-        const { default: AOS } = await import("aos");
-        let resizeTimeout;
-        const onResize = () => {
-          clearTimeout(resizeTimeout);
-          resizeTimeout = setTimeout(() => {
-            AOS.refresh();
-          }, 200);
-        };
-
-        AOS.init({
-          duration: 800,
-          easing: "ease-out-cubic",
-          once: true,
-          mirror: false,
-          offset: 80,
-          throttleDelay: 200,
-          debounceDelay: 150,
-          disableMutationObserver: true,
-          startEvent: "DOMContentLoaded",
-        });
-
-        window.addEventListener("resize", onResize, { passive: true });
-        window.addEventListener(
-          "pagehide",
-          () => {
-            window.removeEventListener("resize", onResize);
-          },
-          { once: true }
-        );
-      };
-
-      if ("requestIdleCallback" in window) {
-        requestIdleCallback(loadAOS, { timeout: 4000 });
-      } else {
-        setTimeout(loadAOS, 500);
-      }
-    }
+    document.querySelectorAll("[data-aos]").forEach(function (el) {
+      observer.observe(el);
+    });
   </script>
 </html>
