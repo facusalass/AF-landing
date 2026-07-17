@@ -1,0 +1,70 @@
+---
+// src/components/sections/PainPoints.astro
+import { Icon } from 'astro-icon/components'; 
+
+const painPoints = [
+  {
+    iconName: "heroicons:currency-dollar", 
+    title: "Dependés de plataformas de terceros",
+    description: "Pagás comisiones y no sos dueño de tu sistema. Te damos una plataforma propia y escalable."
+  },
+  {
+    iconName: "heroicons:chart-bar", 
+    title: "Perdés ventas por no tener presencia online",
+    description: "Tus clientes te buscan en internet. Si no te encuentran, le compran a tu competencia."
+  },
+  {
+    iconName: "heroicons:clock", 
+    title: "Tu sistema actual es lento y desactualizado",
+    description: "Un sistema lento frustra a tus usuarios y te hace ver poco profesional."
+  },
+  {
+    iconName: "heroicons:cog-6-tooth", 
+    title: "Gastás horas en tareas que podrían automatizarse",
+    description: "Integramos tus herramientas para que puedas dedicarte a crecer, no a tareas repetitivas."
+  },
+  {
+    iconName: "heroicons:rocket-launch", 
+    title: "No podés escalar sin tecnología propia",
+    description: "Las plataformas 'enlatadas' tienen un límite. Un sistema a medida como el que ofrecemos crece con vos."
+  },
+  {
+    iconName: "heroicons:trophy", 
+    title: "Tu competencia ya tiene plataforma digital",
+    description: "No te quedes atrás. Una plataforma moderna es una ventaja competitiva clave."
+  }
+];
+---
+
+<section id="dolores" class="py-24 sm:py-32" data-aos="fade-up">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+    <div class="max-w-3xl relative pl-6 sm:pl-10 text-left" data-aos="fade-up" data-aos-delay="100">
+      <span class="absolute left-0 top-4 h-3 w-3 rounded-full border border-indigo-200/80 bg-slate-900"></span>
+      <h2 class="font-mont text-3xl md:text-4xl font-semibold text-indigo-200">
+        ¿Te pasa esto con tu negocio?
+      </h2>
+      <p class="font-poppins text-neutral-300 text-lg md:text-xl mt-4">
+        Conocemos lo que frena a muchos negocios o emprendimientos digitales y sabemos cómo solucionarlo.
+      </p>
+    </div>
+
+    <div class="mt-14 sm:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+      {painPoints.map((item, index) => (
+        <div class="group p-6 pt-8 border border-white/10 rounded-2xl bg-black/20 text-center transition-colors transition-transform duration-300 hover:border-indigo-400/30 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(129,140,248,0.1)]" data-aos="fade-up" data-aos-delay={100 + index * 80}> 
+          
+          <div class="inline-flex items-center justify-center p-3 bg-indigo-500/10 rounded-lg mb-6 group-hover:bg-indigo-500/20 group-hover:scale-110 transition-colors transition-transform duration-300">
+            <Icon name={item.iconName} class="h-8 w-8 text-indigo-300 group-hover:text-cyan-300 transition-colors duration-300" /> 
+          </div>
+
+          <h3 class="font-mont text-xl font-semibold text-indigo-300 mb-3 group-hover:text-cyan-300 transition-colors duration-300">
+            {item.title}
+          </h3>
+          
+          <p class="font-poppins text-neutral-300/80 text-sm leading-relaxed">
+            {item.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
