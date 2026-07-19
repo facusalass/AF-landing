@@ -11,6 +11,10 @@ const env = loadEnv(process.env.NODE_ENV || 'development', process.cwd(), '');
 export default defineConfig({
   site: env.PUBLIC_SITE_URL || 'https://example.com',
 
+  build: {
+    inlineStylesheets: 'always',
+  },
+
   vite: {
     plugins: [tailwindcss()],
   },
