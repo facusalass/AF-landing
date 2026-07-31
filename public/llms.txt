@@ -1,0 +1,47 @@
+# AFdevelopers
+
+> Agencia de desarrollo de software a medida en Argentina. Creamos sitios web, sistemas y plataformas que impulsan negocios.
+
+## Quiénes somos
+
+AFdevelopers es una agencia de software argentina fundada en 2024. Desarrollamos soluciones digitales personalizadas para negocios y emprendimientos que buscan escalar con tecnología propia, sin depender de plataformas de terceros.
+
+## Servicios
+
+- **Sitios web modernos**: Páginas web atractivas, rápidas y optimizadas para Google. Diseñadas para que tu negocio se vea profesional y genere confianza.
+- **Sistemas a medida**: Sistemas internos y paneles de administración adaptados exactamente a la forma en que trabajás. Gestión simple, rápida y organizada.
+- **Integraciones y automatización**: Automatización de tareas repetitivas (impresión automática de comandas, envío de mensajes, integración con CRMs y pasarelas de pago).
+
+## Stack tecnológico
+
+Trabajamos con React, TypeScript, Node.js, Next.js, Astro, Tailwind CSS, MongoDB, Firebase, PostgreSQL, y desplegamos en Vercel y Cloudinary.
+
+## Portafolio
+
+- [Cheepers App](https://cheepersapp.vercel.app/): Plataforma web y gestión de pedidos para local de hamburguesas.
+- [Modeladopao App](https://modelado-pao.vercel.app/): E-commerce para negocio artesanal de porcelana fría.
+- [Kiszcka Repuestos](https://kiszcka-repuestos.vercel.app/): Landing page para venta de repuestos Mercedes Benz con gestión de inventario.
+
+## Contacto
+
+- Email: afdevelopers12@gmail.com
+- WhatsApp: +543624250501
+- Instagram: [@afdeveloperss](https://www.instagram.com/afdeveloperss/)
+- Agendar reunión: [Calendly](https://calendly.com/facusalass15/30min)
+- Web: [afdevelopers.com](https://afdevelopers.com)
+
+## Ubicación
+
+Argentina (servicio remoto y presencial en Resistencia, Chaco).
+
+## Clientes
+
+Trabajamos con dueños de negocios locales, emprendedores y comercios que necesitan presencia digital profesional o automatizar sus procesos operativos. También ofrecemos soluciones para negocios que quieren independizarse de plataformas de terceros y tener control total sobre su sistema.
+
+## ¿Por qué elegir AFdevelopers?
+
+1. **Soluciones a medida**: No usamos plantillas genéricas. Cada proyecto se diseña según las necesidades reales del negocio.
+2. **Acompañamiento completo**: Desde la idea hasta el deploy y mantenimiento.
+3. **Tecnología moderna**: Stack actualizado para garantizar velocidad, seguridad y escalabilidad.
+4. **Comunicación directa**: Atención personalizada sin intermediarios.
+5. **Precios competitivos**: Desarrollo profesional argentino a costos accesibles para el mercado local.

@@ -1,0 +1,108 @@
+# AFdevelopers — Información completa
+
+## Identidad
+
+AFdevelopers es una agencia de desarrollo de software fundada en 2024 en Argentina. Nos especializamos en crear soluciones digitales personalizadas: sitios web, sistemas web, plataformas de e-commerce y automatización de procesos para negocios y emprendedores.
+
+**Ubicación**: Argentina (oficina en Resistencia, Chaco). Servicio remoto a todo el país.
+**Teléfono**: +54 3624 250501
+**Email**: afdevelopers12@gmail.com
+**Web**: https://afdevelopers.com
+**Instagram**: https://www.instagram.com/afdeveloperss/
+**Calendly**: https://calendly.com/facusalass15/30min
+**WhatsApp**: https://wa.me/3624250501
+
+---
+
+## Propuesta de valor
+
+Transformamos negocios en plataformas digitales que venden, gestionan y crecen solas. No dependemos de plantillas ni soluciones genéricas: escuchamos cada necesidad, diseñamos una estrategia a medida y desarrollamos la solución exacta que el cliente necesita.
+
+---
+
+## Servicios principales
+
+### 1. Sitios web modernos
+Creamos páginas web atractivas, adaptables a cualquier dispositivo y optimizadas para buscadores. Diseñadas para que el negocio se vea profesional, sea fácil de encontrar en Google y genere confianza desde el primer vistazo.
+
+### 2. Sistemas a medida
+Desarrollamos sistemas internos y paneles de administración hechos a medida para que el cliente pueda gestionar su negocio de forma simple, rápida y organizada. Todo adaptado exactamente a la forma en que trabaja cada negocio.
+
+### 3. Integraciones y automatización
+Automatizamos tareas repetitivas como impresión automática de comandas, envío de mensajes a clientes, y conexión con otras herramientas (CRMs, pasarelas de pago, etc.) para que el negocio trabaje más rápido y sin errores.
+
+---
+
+## Beneficios y soluciones
+
+1. **Tu Visión, Nuestra Experiencia**: Primero escuchamos y entendemos a fondo el negocio y sus objetivos. Luego diseñamos una estrategia digital a medida.
+2. **Tu Presencia Online, a Tu Medida**: Web impactante, app móvil o plataforma completa. Rápida, segura y diseñada para dar control total de las ventas.
+3. **Automatizamos lo Complejo**: Conectamos herramientas existentes o creamos nuevas para que las tareas repetitivas se hagan solas.
+4. **Nosotros nos encargamos de la Tecnología**: El cliente cuenta su necesidad y da feedback. Del código, la configuración y los detalles técnicos nos ocupamos nosotros.
+
+---
+
+## Problemas que resolvemos
+
+1. **Dependencia de plataformas de terceros**: Pagar comisiones sin ser dueño del sistema. Nosotros damos una plataforma propia y escalable.
+2. **Pérdida de ventas por falta de presencia online**: Clientes que buscan en internet y no encuentran el negocio.
+3. **Sistemas lentos y desactualizados**: Un sistema lento frustra usuarios y proyecta poca profesionalidad.
+4. **Horas perdidas en tareas manuales**: Integramos herramientas para que el negocio pueda enfocarse en crecer.
+5. **Imposibilidad de escalar sin tecnología propia**: Las plataformas enlatadas tienen límites. Un sistema a medida crece con el negocio.
+6. **Competencia con presencia digital**: Una plataforma moderna es ventaja competitiva clave.
+
+---
+
+## Stack tecnológico
+
+Desarrollamos con: React, TypeScript, Node.js, Next.js, Astro, Tailwind CSS, MongoDB, Firebase, PostgreSQL. Desplegamos en Vercel y optimizamos imágenes con Cloudinary.
+
+---
+
+## Portafolio de proyectos
+
+### Cheepers App
+Plataforma web y gestión de pedidos para un local de hamburguesas. Tecnologías: React, TypeScript, Node.js, MongoDB.
+URL: https://cheepersapp.vercel.app/
+
+### Modeladopao App
+E-commerce para negocio artesanal de porcelana fría. Tecnologías: React, TypeScript, Firebase, Tailwind CSS.
+URL: https://modelado-pao.vercel.app/
+
+### Kiszcka Repuestos Page
+Landing page para venta de repuestos Mercedes Benz con gestión de inventario y contacto directo. Tecnologías: Next.js, TypeScript, Tailwind CSS.
+URL: https://kiszcka-repuestos.vercel.app/
+
+---
+
+## Reseñas de clientes
+
+**Ricardo Salas** — Dueño, Negocio Local:
+"Transformaron nuestra idea en una plataforma increíble. El proceso fue claro y el resultado superó nuestras expectativas. ¡100% recomendados!"
+
+**Paola Ferrari** — Dueña de emprendimiento:
+"Desde que implementamos el sistema a medida, ahorramos horas de trabajo manual cada semana. ¡Un antes y un después para nuestra gestión!"
+
+**Alejandro Kiszcka** — Dueño, Kiszcka Repuestos:
+"Gracias a la landing page que me hicieron, mi negocio de repuestos de Mercedes Benz ahora llega a más clientes, tanto en la provincia como en todo el país. Muy recomendados."
+
+---
+
+## Proceso de trabajo
+
+1. El cliente agenda una reunión (Calendly o WhatsApp).
+2. Escuchamos su necesidad y objetivos de negocio.
+3. Diseñamos una propuesta técnica y económica a medida.
+4. Desarrollamos con metodología ágil, entregando avances periódicos.
+5. Entregamos la solución lista para usar, con soporte post-lanzamiento.
+
+---
+
+## Por qué elegir AFdevelopers
+
+- **Desarrollo 100% personalizado**: Sin plantillas. Cada línea de código responde a una necesidad real del negocio.
+- **Tecnología moderna**: Stack actualizado para garantizar velocidad, seguridad y escalabilidad.
+- **Acompañamiento integral**: Desde la idea hasta el deploy, mantenimiento y mejoras continuas.
+- **Comunicación directa**: Trato personal con los developers, sin intermediarios.
+- **Precios competitivos**: Desarrollo profesional argentino a costos accesibles para el mercado local.
+- **Independencia tecnológica**: El cliente es dueño de su plataforma, sin depender de terceros ni pagar comisiones.

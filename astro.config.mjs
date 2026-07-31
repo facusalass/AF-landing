@@ -19,5 +19,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [icon(), sitemap()],
+  integrations: [icon(), sitemap({ filter: (page) => !page.includes('/404') })],
 });
