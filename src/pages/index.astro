@@ -122,9 +122,6 @@ const structuredData = [
   </head>
 
   <body class="min-h-screen text-white selection:bg-indigo-500/30 overflow-x-hidden">
-    <a href="#inicio" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-3 focus:bg-indigo-500 focus:text-white focus:rounded-lg focus:font-poppins focus:text-sm focus:outline-none">
-      Saltar al contenido
-    </a>
     <div class="fixed inset-0 z-0 bg-slate-900">
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(129,140,248,0.12),transparent)]"></div>
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_100%_100%,rgba(34,211,238,0.08),transparent)]"></div>
@@ -226,22 +223,21 @@ const structuredData = [
       }
     });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        const delay = el.getAttribute("data-aos-delay");
-        el.style.willChange = "transform, opacity";
-        if (delay) el.style.transitionDelay = delay + "ms";
-        el.classList.add("aos-visible");
-        el.addEventListener("transitionend", () => {
-          el.style.willChange = "auto";
-        }, { once: true });
-        observer.unobserve(el);
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var el = entry.target;
+        var delay = el.getAttribute("data-aos-delay");
+        if (entry.isIntersecting) {
+          if (delay) el.style.transitionDelay = delay + "ms";
+          el.classList.add("aos-visible");
+        } else {
+          el.classList.remove("aos-visible");
+          if (delay) el.style.transitionDelay = "0ms";
+        }
       });
-    }, { threshold: 0, rootMargin: "0px 0px 60px 0px" });
+    }, { threshold: 0, rootMargin: "0px 0px 30px 0px" });
 
-    document.querySelectorAll("[data-aos]").forEach((el) => {
+    document.querySelectorAll("[data-aos]").forEach(function (el) {
       observer.observe(el);
     });
   </script>
