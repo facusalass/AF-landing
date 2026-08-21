@@ -65,9 +65,9 @@ Desarrollamos con: React, TypeScript, Node.js, Next.js, Astro, Tailwind CSS, Mon
 Plataforma web y gestión de pedidos para un local de hamburguesas. Tecnologías: React, TypeScript, Node.js, MongoDB.
 URL: https://cheepersapp.vercel.app/
 
-### Modeladopao App
-E-commerce para negocio artesanal de porcelana fría. Tecnologías: React, TypeScript, Firebase, Tailwind CSS.
-URL: https://modelado-pao.vercel.app/
+### Tokyo Sushi
+Menú digital personalizado para restaurante de comida japonesa. Tecnologías: Next.js, TypeScript, Tailwind CSS.
+URL: https://tokyo-sushis.vercel.app/
 
 ### Kiszcka Repuestos Page
 Landing page para venta de repuestos Mercedes Benz con gestión de inventario y contacto directo. Tecnologías: Next.js, TypeScript, Tailwind CSS.

@@ -19,7 +19,7 @@ Trabajamos con React, TypeScript, Node.js, Next.js, Astro, Tailwind CSS, MongoDB
 ## Portafolio
 
 - [Cheepers App](https://cheepersapp.vercel.app/): Plataforma web y gestión de pedidos para local de hamburguesas.
-- [Modeladopao App](https://modelado-pao.vercel.app/): E-commerce para negocio artesanal de porcelana fría.
+- [Tokyo Sushi](https://tokyo-sushis.vercel.app/): Menú digital personalizado para restaurante de comida japonesa.
 - [Kiszcka Repuestos](https://kiszcka-repuestos.vercel.app/): Landing page para venta de repuestos Mercedes Benz con gestión de inventario.
 
 ## Contacto
