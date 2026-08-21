@@ -44,11 +44,13 @@ const navLinks = [
       </nav>
 
       <form
-        action="/api/subscribe"
+        action="https://formsubmit.co/afdevelopers12@gmail.com"
         method="POST"
         class="flex items-stretch w-full lg:w-auto min-w-0 max-w-sm"
       >
-        <input type="hidden" name="subject" value="Nueva suscripcion desde AFdevelopers" />
+        <input type="hidden" name="_subject" value="Nueva suscripcion desde AFdevelopers" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
         <label for="footer-email" class="sr-only">Tu correo electrónico</label>
         <input
           id="footer-email"
