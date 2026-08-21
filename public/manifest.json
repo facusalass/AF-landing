@@ -1,0 +1,22 @@
+{
+  "name": "AFdevelopers",
+  "short_name": "AFdevelopers",
+  "description": "Agencia de desarrollo de software a medida en Argentina. Sitios web, sistemas y plataformas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "lang": "es-AR",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
