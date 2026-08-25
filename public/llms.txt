@@ -1,10 +1,10 @@
 # AFdevelopers
 
-> Agencia de desarrollo de software a medida en Argentina. Creamos sitios web, sistemas y plataformas que impulsan negocios.
+> Agencia de desarrollo de software a medida en Resistencia, Chaco, Argentina. Creamos sitios web, sistemas y plataformas que impulsan negocios.
 
 ## Quiénes somos
 
-AFdevelopers es una agencia de software argentina fundada en 2024. Desarrollamos soluciones digitales personalizadas para negocios y emprendimientos que buscan escalar con tecnología propia, sin depender de plataformas de terceros.
+AFdevelopers es una agencia de software argentina fundada en 2024, con sede en Resistencia, Chaco. Desarrollamos soluciones digitales personalizadas para negocios y emprendimientos que buscan escalar con tecnología propia, sin depender de plataformas de terceros. Atendemos clientes en toda Argentina, de forma presencial en Resistencia y remota en el resto del país.
 
 ## Servicios
 
@@ -32,7 +32,7 @@ Trabajamos con React, TypeScript, Node.js, Next.js, Astro, Tailwind CSS, MongoDB
 
 ## Ubicación
 
-Argentina (servicio remoto y presencial en Resistencia, Chaco).
+Resistencia, Chaco, Argentina. Servicio presencial en Resistencia y remoto en todo el país.
 
 ## Clientes
 

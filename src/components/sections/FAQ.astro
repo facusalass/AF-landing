@@ -1,0 +1,44 @@
+---
+const faqs = [
+  {
+    q: "¿Hacen páginas web en Resistencia, Chaco?",
+    a: "Sí. Somos una agencia de software en Resistencia, Chaco, y desarrollamos páginas web, sistemas y plataformas para negocios de toda Argentina, tanto de forma presencial como remota.",
+  },
+  {
+    q: "¿Qué servicios de desarrollo de software ofrecen?",
+    a: "Sitios web modernos optimizados para Google, sistemas a medida, paneles de administración, e-commerce, integraciones con CRMs y pasarelas de pago, y automatización de tareas repetitivas.",
+  },
+  {
+    q: "¿Cuánto cuesta una página web o un sistema a medida?",
+    a: "El precio depende del alcance del proyecto. Agenda una reunión gratuita por WhatsApp o Calendly y recibí un presupuesto a medida según las necesidades de tu negocio.",
+  },
+  {
+    q: "¿Trabajan con clientes fuera de Chaco?",
+    a: "Sí, trabajamos con clientes de toda Argentina de forma remota, además de atender de manera presencial en Resistencia, Chaco.",
+  },
+];
+---
+
+<section id="preguntas" class="py-16 sm:py-24">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-10">
+    <div class="relative pl-6 sm:pl-10 text-left mb-10 sm:mb-14" data-aos="fade-up">
+      <span class="absolute left-0 top-4 h-3 w-3 rounded-full border border-indigo-200/80 bg-slate-900"></span>
+      <h2 class="font-mont text-3xl md:text-4xl font-semibold text-indigo-200">
+        Preguntas frecuentes
+      </h2>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <div class="border border-white/10 rounded-2xl bg-black/20 p-6" data-aos="fade-up" data-aos-delay={index * 100}>
+          <h3 class="font-mont text-lg sm:text-xl font-semibold text-indigo-300 mb-2">
+            {faq.q}
+          </h3>
+          <p class="font-poppins text-neutral-300/90 text-sm sm:text-base leading-relaxed">
+            {faq.a}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

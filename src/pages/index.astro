@@ -8,17 +8,18 @@ import ContactSection from "../components/sections/ContactSection.astro";
 import ReviewSection from "../components/sections/Reviews.astro";
 import BenefitsSection from "../components/sections/Benefits.astro";
 import AboutVideo from "../components/sections/AboutVideo.astro";
+import FAQ from "../components/sections/FAQ.astro";
 
 const siteUrl = Astro.site ? new URL(Astro.site) : new URL("https://example.com");
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const socialImageUrl = new URL("/og-image.png", siteUrl).toString();
 const isLocalDev = Astro.url.hostname === "localhost";
 const hasConfiguredSite = siteUrl.hostname !== "example.com" || isLocalDev;
-const pageTitle = "AFdevelopers | Software a medida";
+const pageTitle = "AFdevelopers | Agencia de Software y Páginas Web en Resistencia, Chaco";
 const pageDescription =
-  "Creamos soluciones digitales personalizadas: sitios web, sistemas y plataformas que impulsan tu negocio. Desarrollo profesional en Argentina.";
+  "Agencia de software en Resistencia, Chaco. Creamos páginas web, sistemas y plataformas a medida para negocios de toda Argentina.";
 const pageKeywords =
-  "desarrollo web, software a medida, páginas web, sistemas web, automatización, Argentina, AFdevelopers";
+  "agencia de software, desarrollo web Resistencia Chaco, páginas web Resistencia, software a medida, sistemas web, automatización, Argentina, AFdevelopers";
 const robotsContent = hasConfiguredSite
   ? "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
   : "noindex, nofollow";
@@ -34,8 +35,18 @@ const structuredData = [
     description: pageDescription,
     foundingDate: "2024",
     telephone: "+543624250501",
-    areaServed: { "@type": "Country", name: "Argentina" },
-    address: { "@type": "PostalAddress", addressCountry: "AR" },
+    slogan: "Software y páginas web a medida en Resistencia, Chaco",
+    areaServed: [
+      { "@type": "City", name: "Resistencia" },
+      { "@type": "State", name: "Chaco" },
+      { "@type": "Country", name: "Argentina" },
+    ],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Resistencia",
+      addressRegion: "Chaco",
+      addressCountry: "AR",
+    },
     sameAs: [
       "https://www.instagram.com/afdeveloperss/",
     ],
@@ -61,6 +72,44 @@ const structuredData = [
     about: { "@type": "Organization", "@id": siteUrl.toString() },
     primaryImageOfPage: { "@type": "ImageObject", url: socialImageUrl },
   },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "¿Hacen páginas web en Resistencia, Chaco?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Sí. Somos una agencia de software en Resistencia, Chaco, y desarrollamos páginas web, sistemas y plataformas para negocios de toda Argentina, tanto de forma presencial como remota.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Qué servicios de desarrollo de software ofrecen?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Sitios web modernos optimizados para Google, sistemas a medida, paneles de administración, e-commerce, integraciones con CRMs y pasarelas de pago, y automatización de tareas repetitivas.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Cuánto cuesta una página web o un sistema a medida?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "El precio depende del alcance del proyecto. Agenda una reunión gratuita por WhatsApp o Calendly y recibí un presupuesto a medida según las necesidades de tu negocio.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Trabajan con clientes fuera de Chaco?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Sí, trabajamos con clientes de toda Argentina de forma remota, además de atender de manera presencial en Resistencia, Chaco.",
+        },
+      },
+    ],
+  },
 ];
 ---
 
@@ -76,6 +125,10 @@ const structuredData = [
     <meta name="application-name" content="AFdevelopers" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="language" content="es-AR" />
+    <meta name="geo.region" content="AR-H" />
+    <meta name="geo.placename" content="Resistencia, Chaco" />
+    <meta name="geo.position" content="-27.4521;-58.9868" />
+    <meta name="ICBM" content="-27.4521, -58.9868" />
 
     <link rel="canonical" href={canonicalUrl} />
     <link rel="alternate" hreflang="es-AR" href={canonicalUrl} />
@@ -156,7 +209,7 @@ const structuredData = [
             </h2>
 
             <p class="font-poppins text-sm sm:text-base md:text-xl text-neutral-200 mt-6 max-w-2xl leading-relaxed" data-aos="fade-right" data-aos-delay="300" itemprop="description">
-              Desarrollamos sitios web, sistemas y plataformas modernas que se adaptan totalmente a las necesidades de tu negocio.
+              Somos una agencia de software en Resistencia, Chaco. Desarrollamos sitios web, sistemas y plataformas modernas que se adaptan totalmente a las necesidades de tu negocio.
               <br class="hidden md:block" />
               Completas, seguras y pensadas para escalar, sin depender de terceros.
             </p>
@@ -214,6 +267,7 @@ const structuredData = [
           <BenefitsSection />
           <ReviewSection />
           <Portfolio />
+          <FAQ />
           <ContactSection />
         </div>
       </main>
