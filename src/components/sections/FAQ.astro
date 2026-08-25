@@ -6,7 +6,7 @@ const faqs = [
   },
   {
     q: "¿Qué servicios de desarrollo de software ofrecen?",
-    a: "Sitios web modernos optimizados para Google, sistemas a medida, paneles de administración, e-commerce, integraciones con CRMs y pasarelas de pago, y automatización de tareas repetitivas.",
+    a: "Sitios web modernos, sistemas a medida, menús digitales personalizados, integraciones y automatización de tareas. Todo pensado para que tu negocio venda más y trabaje más simple.",
   },
   {
     q: "¿Cuánto cuesta una página web o un sistema a medida?",
@@ -21,23 +21,26 @@ const faqs = [
 
 <section id="preguntas" class="py-16 sm:py-24">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-10">
-    <div class="relative pl-6 sm:pl-10 text-left mb-10 sm:mb-14" data-aos="fade-up">
+    <div class="relative pl-6 sm:pl-10 text-left mb-8 sm:mb-10" data-aos="fade-up">
       <span class="absolute left-0 top-4 h-3 w-3 rounded-full border border-indigo-200/80 bg-slate-900"></span>
       <h2 class="font-mont text-3xl md:text-4xl font-semibold text-indigo-200">
         Preguntas frecuentes
       </h2>
     </div>
 
-    <div class="space-y-4">
+    <div class="space-y-3">
       {faqs.map((faq, index) => (
-        <div class="border border-white/10 rounded-2xl bg-black/20 p-6" data-aos="fade-up" data-aos-delay={index * 100}>
-          <h3 class="font-mont text-lg sm:text-xl font-semibold text-indigo-300 mb-2">
-            {faq.q}
-          </h3>
-          <p class="font-poppins text-neutral-300/90 text-sm sm:text-base leading-relaxed">
+        <details class="group border border-white/10 rounded-xl bg-black/20 transition-colors hover:border-indigo-400/30" data-aos="fade-up" data-aos-delay={index * 80}>
+          <summary class="flex items-center justify-between gap-3 cursor-pointer select-none list-none px-5 py-4 font-mont text-base sm:text-lg font-semibold text-indigo-300 transition-colors group-open:text-cyan-300">
+            <span>{faq.q}</span>
+            <svg class="w-5 h-5 shrink-0 text-indigo-300 transition-transform duration-300 group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14m-7-7h14" />
+            </svg>
+          </summary>
+          <p class="px-5 pb-4 font-poppins text-neutral-300/90 text-sm sm:text-base leading-relaxed">
             {faq.a}
           </p>
-        </div>
+        </details>
       ))}
     </div>
   </div>

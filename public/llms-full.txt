@@ -2,7 +2,7 @@
 
 ## Identidad
 
-AFdevelopers es una agencia de desarrollo de software fundada en 2024 en Argentina. Nos especializamos en crear soluciones digitales personalizadas: sitios web, sistemas web, plataformas de e-commerce y automatización de procesos para negocios y emprendedores.
+AFdevelopers es una agencia de desarrollo de software fundada en 2024 en Argentina. Nos especializamos en crear soluciones digitales personalizadas: sitios web, sistemas web, menús digitales personalizados y automatización de procesos para negocios y emprendedores.
 
 **Ubicación**: Argentina (oficina en Resistencia, Chaco). Servicio remoto a todo el país.
 **Teléfono**: +54 3624 250501
