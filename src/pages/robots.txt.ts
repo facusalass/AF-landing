@@ -9,6 +9,7 @@ export const GET: APIRoute = ({ site }) => {
   const body = hasConfiguredSite
     ? `User-agent: *
 Allow: /
+Disallow: /herramientas/api/
 
 Sitemap: ${sitemapUrl}
 `

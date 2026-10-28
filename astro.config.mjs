@@ -19,5 +19,10 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [icon(), sitemap({ filter: (page) => !page.includes('/404') })],
+  integrations: [icon(), sitemap({
+    filter: (page) => !page.includes('/404'),
+    customPages: ['/herramientas', '/herramientas/calculadora-comisiones-delivery'].map(
+      (pathname) => new URL(pathname, env.PUBLIC_SITE_URL || 'https://afdevelopers.com').href,
+    ),
+  })],
 });

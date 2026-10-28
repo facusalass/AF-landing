@@ -49,5 +49,15 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/herramientas",
+      "destination": "https://afdevelopers-tools.afdevelopers-tools.workers.dev/herramientas"
+    },
+    {
+      "source": "/herramientas/:path*",
+      "destination": "https://afdevelopers-tools.afdevelopers-tools.workers.dev/herramientas/:path*"
+    }
   ]
 }
