@@ -9,7 +9,7 @@ import icon from 'astro-icon';
 const env = loadEnv(process.env.NODE_ENV || 'development', process.cwd(), '');
 
 export default defineConfig({
-  site: env.PUBLIC_SITE_URL || 'https://example.com',
+  site: env.PUBLIC_SITE_URL || 'https://afdevelopers.com',
 
   build: {
     inlineStylesheets: 'always',
@@ -21,7 +21,7 @@ export default defineConfig({
 
   integrations: [icon(), sitemap({
     filter: (page) => !page.includes('/404'),
-    customPages: ['/herramientas', '/herramientas/calculadora-comisiones-delivery'].map(
+    customPages: ['/herramientas', '/herramientas/calculadora-costos-pedidos'].map(
       (pathname) => new URL(pathname, env.PUBLIC_SITE_URL || 'https://afdevelopers.com').href,
     ),
   })],

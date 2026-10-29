@@ -16,6 +16,11 @@ const faqs = [
     q: "¿Trabajan con clientes fuera de Chaco?",
     a: "Sí, trabajamos con clientes de toda Argentina de forma remota, además de atender de manera presencial en Resistencia, Chaco.",
   },
+  {
+    q: "¿AFdevelopers tiene herramientas gratuitas para negocios?",
+    a: "Sí. Elegís si pagás un menú digital, cómo entregás los pedidos y si pagás comisión por cobros digitales. La calculadora muestra solo los importes necesarios y los compara con dos sistemas propios de AFdevelopers, sin comisión por pedido.",
+    href: "/herramientas/calculadora-costos-pedidos",
+  },
 ];
 ---
 
@@ -39,6 +44,7 @@ const faqs = [
           </summary>
           <p class="px-5 pb-4 font-poppins text-neutral-300/90 text-sm sm:text-base leading-relaxed">
             {faq.a}
+            {faq.href && <a href={faq.href} class="block mt-3 text-cyan-300 underline underline-offset-4 hover:text-cyan-200">Abrir la calculadora de costos de pedidos</a>}
           </p>
         </details>
       ))}
