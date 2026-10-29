@@ -1,3 +1,12 @@
+---
+const newTools = [
+  { title: "Generador de QR gratis", description: "Creá QR para menús, sitios web, redes sociales y WhatsApp. Descargá PNG o SVG sin registro ni anuncios.", href: "/herramientas/generador-qr" },
+  { title: "Generador de links de WhatsApp", description: "Prepará un enlace con mensaje y código QR para que tus clientes te escriban más fácilmente.", href: "/herramientas/generador-links-whatsapp" },
+  { title: "Calculadora de costos gastronómicos", description: "Sumá ingredientes y porciones para estimar el costo de un plato y su precio según el margen deseado.", href: "/herramientas/calculadora-costos-gastronomicos" },
+  { title: "Calculadora de comisiones de delivery", description: "Mirá cuánto recibe tu comercio por cada venta después de comisiones y otros cargos configurables.", href: "/herramientas/calculadora-comisiones-delivery-por-pedido" },
+  { title: "Conversor de imágenes gratis", description: "Convertí imágenes PNG, JPG y WebP sin subir los archivos a un servidor.", href: "/herramientas/conversor-imagenes" },
+];
+---
 <section id="herramientas-gratuitas" class="py-16 sm:py-24" aria-labelledby="herramientas-titulo">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
     <div class="max-w-3xl relative pl-6 sm:pl-10 text-left mb-8 sm:mb-10" data-aos="fade-up">
@@ -40,6 +49,13 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+      {newTools.map((tool) => <article class="rounded-2xl border border-indigo-300/20 bg-slate-900/60 p-6">
+        <h3 class="font-mont text-xl font-semibold text-white">{tool.title}</h3>
+        <p class="font-poppins text-sm leading-relaxed text-neutral-300 mt-3">{tool.description}</p>
+        <a href={tool.href} class="inline-flex items-center min-h-11 mt-4 font-poppins text-cyan-300 underline underline-offset-4">Usar herramienta gratis ↗</a>
+      </article>)}
     </div>
   </div>
 </section>

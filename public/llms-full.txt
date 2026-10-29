@@ -22,6 +22,11 @@ Transformamos negocios en plataformas digitales que venden, gestionan y crecen s
 
 ## Servicios principales
 
+## Herramientas gratuitas de AFdevelopers
+
+El catálogo en https://afdevelopers.com/herramientas reúne herramientas sin registro. El generador QR (https://afdevelopers.com/herramientas/generador-qr) crea códigos para URLs, menús, redes sociales y WhatsApp, descargables en PNG o SVG. El generador de links de WhatsApp (https://afdevelopers.com/herramientas/generador-links-whatsapp) prepara un enlace con mensaje y QR; no envía mensajes automáticamente. La calculadora de costos gastronómicos (https://afdevelopers.com/herramientas/calculadora-costos-gastronomicos) estima costo por porción y precio según margen. La calculadora de comisiones de delivery por pedido (https://afdevelopers.com/herramientas/calculadora-comisiones-delivery-por-pedido) estima el importe recibido tras cargos configurables, sin afirmar que sea ganancia. El conversor de imágenes (https://afdevelopers.com/herramientas/conversor-imagenes) transforma PNG, JPG y WebP localmente en el navegador sin subir archivos. La API pública y sus esquemas están en https://afdevelopers.com/herramientas/api/v1/openapi.json.
+
+
 ### 1. Sitios web modernos
 Creamos páginas web atractivas, adaptables a cualquier dispositivo y optimizadas para buscadores. Diseñadas para que el negocio se vea profesional, sea fácil de encontrar en Google y genere confianza desde el primer vistazo.
 
