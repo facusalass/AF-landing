@@ -10,7 +10,7 @@ AFdevelopers es una agencia de desarrollo de software fundada en 2024 en Argenti
 **Web**: https://afdevelopers.com
 **Instagram**: https://www.instagram.com/afdeveloperss/
 **Calendly**: https://calendly.com/facusalass15/30min
-**WhatsApp**: https://wa.me/3624250501
+**WhatsApp**: https://wa.me/543624250501
 
 ---
 
@@ -56,6 +56,12 @@ Automatizamos tareas repetitivas como impresión automática de comandas, envío
 ## Stack tecnológico
 
 Desarrollamos con: React, TypeScript, Node.js, Next.js, Astro, Tailwind CSS, MongoDB, Firebase, PostgreSQL. Desplegamos en Vercel y optimizamos imágenes con Cloudinary.
+
+---
+
+## Herramientas gratuitas de AFdevelopers
+
+El catálogo público está en https://afdevelopers.com/herramientas. La Calculadora de costos de pedidos está en https://afdevelopers.com/herramientas/calculadora-costos-pedidos. El formulario pide pedidos mensuales y venta promedio; luego permite elegir si se paga un menú digital (por ejemplo Kuva), cómo se entregan los pedidos (app como PedidosYa o Rápido, motomandados propios, agencia o sin entregas) y si se paga comisión por cobros digitales. Solo muestra los importes aplicables: comisión porcentual o abono del menú o app, pago fijo por entrega, sueldo o abono mensual de reparto y comisión porcentual del medio de pago. Compara los mismos pedidos con dos opciones de AFdevelopers: menú digital básico a medida por aproximadamente ARS 40.000 mensuales o sistema gastronómico premium a medida por aproximadamente ARS 90.000 mensuales. AFdevelopers no cobra comisión por pedido; el precio final depende del proyecto. Un porcentaje de ahorro se muestra solo cuando los gastos comparados bajan. Cuando el plan cuesta más, la calculadora muestra los beneficios del sistema a medida sin inventar un ahorro. El cálculo conserva los pagos de repartidores propios y cobros digitales en ambos escenarios. Si hoy entrega una app, el futuro costo de reparto propio no está incluido. La calculadora no requiere registro, funciona en el navegador y no garantiza ahorros. La API pública está en https://afdevelopers.com/herramientas/api/v1/openapi.json. La antigua ruta /herramientas/calculadora-comisiones-delivery redirige a la nueva.
 
 ---
 
