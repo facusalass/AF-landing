@@ -1,61 +1,59 @@
 ---
-const newTools = [
-  { title: "Generador de QR gratis", description: "Creá QR para menús, sitios web, redes sociales y WhatsApp. Descargá PNG o SVG sin registro ni anuncios.", href: "/herramientas/generador-qr" },
-  { title: "Generador de links de WhatsApp", description: "Prepará un enlace con mensaje y código QR para que tus clientes te escriban más fácilmente.", href: "/herramientas/generador-links-whatsapp" },
-  { title: "Calculadora de costos gastronómicos", description: "Sumá ingredientes y porciones para estimar el costo de un plato y su precio según el margen deseado.", href: "/herramientas/calculadora-costos-gastronomicos" },
-  { title: "Calculadora de comisiones de delivery", description: "Mirá cuánto recibe tu comercio por cada venta después de comisiones y otros cargos configurables.", href: "/herramientas/calculadora-comisiones-delivery-por-pedido" },
-  { title: "Conversor de imágenes gratis", description: "Convertí imágenes PNG, JPG y WebP sin subir los archivos a un servidor.", href: "/herramientas/conversor-imagenes" },
+const tools = [
+  { title: "Calculadora de costos de pedidos", category: "Gastronomía", description: "Sumá lo que pagás por menú digital, entregas y cobros. Comparalo con un sistema propio sin comisión de AFdevelopers por pedido.", href: "/herramientas/calculadora-costos-pedidos", action: "Calcular mis gastos", afAction: "Quiero un sistema sin comisiones" },
+  { title: "Generador de QR gratis", category: "Marketing", description: "Creá códigos QR para tu menú, sitio web, redes sociales o WhatsApp. Descargalos en PNG o SVG.", href: "/herramientas/generador-qr", action: "Crear un QR", afAction: "Quiero un menú digital propio" },
+  { title: "Generador de links de WhatsApp", category: "Atención al cliente", description: "Prepará un enlace con mensaje y QR para que tus clientes te escriban sin buscar tu número.", href: "/herramientas/generador-links-whatsapp", action: "Crear un link", afAction: "Quiero integrar WhatsApp" },
+  { title: "Calculadora de costos gastronómicos", category: "Gastronomía", description: "Calculá el costo de una receta, el precio por porción y un precio sugerido según tu margen.", href: "/herramientas/calculadora-costos-gastronomicos", action: "Calcular un plato", afAction: "Quiero gestionar mis costos" },
+  { title: "Conversor de imágenes gratis", category: "Imágenes", description: "Convertí imágenes PNG, JPG y WebP en tu navegador, sin subirlas a un servidor.", href: "/herramientas/conversor-imagenes", action: "Convertir imágenes", afAction: "Quiero mejorar mi sitio web" },
 ];
 ---
 <section id="herramientas-gratuitas" class="py-16 sm:py-24" aria-labelledby="herramientas-titulo">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-    <div class="max-w-3xl relative pl-6 sm:pl-10 text-left mb-8 sm:mb-10" data-aos="fade-up">
-      <span class="absolute left-0 top-4 h-3 w-3 rounded-full border border-indigo-200/80 bg-slate-900"></span>
-      <h2 id="herramientas-titulo" class="font-mont text-3xl md:text-4xl font-semibold text-indigo-200">
-        Herramientas gratuitas para tu negocio
-      </h2>
-      <p class="font-poppins text-neutral-300 text-base sm:text-lg mt-4 leading-relaxed">
-        En AFdevelopers creamos herramientas para analizar decisiones reales. Podés usarlas sin registro y consultar cómo se calcula cada resultado.
-      </p>
+    <div class="relative pl-6 sm:pl-10 text-left mb-8 sm:mb-10" data-aos="fade-up">
+      <span class="absolute left-0 top-4 h-3 w-3 rounded-full border border-indigo-200/80 bg-slate-900" aria-hidden="true"></span>
+      <h2 id="herramientas-titulo" class="font-mont text-3xl md:text-4xl font-semibold text-indigo-200">Herramientas gratuitas para tu negocio</h2>
+      <p class="font-poppins text-neutral-300 text-base sm:text-lg mt-4 leading-relaxed max-w-3xl">Resolvé tareas cotidianas sin registro. Explorá las herramientas y descubrí cómo AFdevelopers puede llevarlas a un sistema hecho para tu negocio.</p>
     </div>
-
-    <div class="rounded-2xl border border-indigo-300/20 bg-slate-900/60 p-6 sm:p-8 lg:p-10" data-aos="fade-up">
-      <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start">
-        <img src="/brand-icon.png" alt="" width="56" height="56" class="h-14 w-14 shrink-0" loading="lazy" decoding="async" />
-        <div class="max-w-3xl">
-          <p class="font-poppins text-sm font-semibold text-cyan-300">Gastronomía · Calculadora gratuita</p>
-          <h3 class="font-mont text-2xl sm:text-3xl font-semibold text-white mt-2">
-            Calculadora de costos de pedidos
-          </h3>
-          <p class="font-poppins text-neutral-200/90 mt-4 leading-relaxed">
-            Calculá cuánto pagás por tu menú digital, las entregas y los cobros. Comparalo con un sistema propio. AFdevelopers no cobra comisión por pedido.
-          </p>
-          <p class="font-poppins text-sm text-neutral-400 mt-3">
-            Es una estimación de costos en pesos argentinos; no representa ganancia ni garantiza ahorros.
-          </p>
-          <p class="font-poppins text-neutral-200/90 mt-3 leading-relaxed">
-            Dos opciones a medida: menú digital básico por aproximadamente $40.000 al mes y sistema premium por aproximadamente $90.000 al mes. El precio final depende del proyecto.
-          </p>
-          <div class="flex flex-wrap items-center gap-4 mt-6">
-            <a href="/herramientas/calculadora-costos-pedidos" class="inline-flex items-center justify-center min-h-11 rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400 px-6 py-3 font-poppins font-semibold text-slate-900 hover:from-indigo-300 hover:to-cyan-300 transition-colors">
-              Calcular mis costos de pedidos
-            </a>
-            <a href="/herramientas" class="inline-flex items-center min-h-11 font-poppins text-indigo-200 hover:text-cyan-300 underline underline-offset-4 transition-colors">
-              Ver todas las herramientas
-            </a>
-            <a href="#contacto" class="inline-flex items-center min-h-11 font-poppins text-indigo-200 hover:text-cyan-300 underline underline-offset-4 transition-colors">
-              Quiero un sistema sin comisiones
-            </a>
-          </div>
-        </div>
+    <div class="flex items-center justify-between gap-4 mb-4" data-aos="fade-up">
+      <p class="font-poppins text-sm text-neutral-300">Deslizá para ver las {tools.length} herramientas</p>
+      <div class="flex gap-2" aria-label="Controles del carrusel">
+        <button type="button" data-tools-prev aria-label="Herramienta anterior" aria-controls="tools-carousel" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-indigo-300/40 text-indigo-100 hover:bg-indigo-400/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300 disabled:opacity-40 disabled:cursor-not-allowed" disabled>←</button>
+        <button type="button" data-tools-next aria-label="Herramienta siguiente" aria-controls="tools-carousel" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-indigo-300/40 text-indigo-100 hover:bg-indigo-400/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300 disabled:opacity-40 disabled:cursor-not-allowed">→</button>
       </div>
     </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-      {newTools.map((tool) => <article class="rounded-2xl border border-indigo-300/20 bg-slate-900/60 p-6">
-        <h3 class="font-mont text-xl font-semibold text-white">{tool.title}</h3>
-        <p class="font-poppins text-sm leading-relaxed text-neutral-300 mt-3">{tool.description}</p>
-        <a href={tool.href} class="inline-flex items-center min-h-11 mt-4 font-poppins text-cyan-300 underline underline-offset-4">Usar herramienta gratis ↗</a>
+    <div id="tools-carousel" data-tools-track role="region" aria-roledescription="carrusel" aria-label="Herramientas gratuitas de AFdevelopers" tabindex="0" class="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-5 scroll-smooth focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300" data-aos="fade-up">
+      {tools.map((tool, index) => <article class="snap-start shrink-0 w-[min(85vw,23rem)] min-h-80 rounded-2xl border border-indigo-300/20 bg-slate-900/70 p-6 sm:p-7 flex flex-col" aria-label={`Herramienta ${index + 1} de ${tools.length}: ${tool.title}`}>
+        <p class="font-poppins text-xs font-semibold uppercase tracking-wider text-cyan-300">{tool.category}</p>
+        <h3 class="font-mont text-xl sm:text-2xl font-semibold text-white mt-3">{tool.title}</h3>
+        <p class="font-poppins text-sm leading-relaxed text-neutral-300 mt-4 flex-1">{tool.description}</p>
+        <div class="mt-6 flex flex-col items-start gap-2">
+          <a href={tool.href} class="inline-flex min-h-11 items-center rounded-full bg-gradient-to-r from-indigo-400 to-cyan-400 px-5 py-2 font-poppins text-sm font-semibold text-slate-900 hover:from-indigo-300 hover:to-cyan-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300">{tool.action} ↗</a>
+          <a href="#contacto" class="inline-flex min-h-11 items-center font-poppins text-sm text-indigo-200 hover:text-cyan-300 underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300">{tool.afAction} ↗</a>
+        </div>
       </article>)}
     </div>
+    <a href="/herramientas" class="inline-flex min-h-11 items-center mt-4 font-poppins text-indigo-200 hover:text-cyan-300 underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300">Ver el catálogo completo ↗</a>
   </div>
 </section>
+
+<script>
+  const track = document.querySelector<HTMLElement>('[data-tools-track]');
+  const previous = document.querySelector<HTMLButtonElement>('[data-tools-prev]');
+  const next = document.querySelector<HTMLButtonElement>('[data-tools-next]');
+  if (track && previous && next) {
+    const updateControls = () => {
+      previous.disabled = track.scrollLeft <= 1;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+    };
+    const move = (direction: number) => {
+      const card = track.querySelector<HTMLElement>('article');
+      const step = card ? card.getBoundingClientRect().width + 16 : track.clientWidth;
+      track.scrollBy({ left: step * direction, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    };
+    previous.addEventListener('click', () => move(-1));
+    next.addEventListener('click', () => move(1));
+    track.addEventListener('scroll', updateControls, { passive: true });
+    window.addEventListener('resize', updateControls);
+    updateControls();
+  }
+</script>
