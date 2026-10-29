@@ -19,7 +19,6 @@ AFdevelopers es una agencia de software argentina fundada en 2024, con sede en R
 - [Generador de QR gratis](https://afdevelopers.com/herramientas/generador-qr): QR para URLs, menús, redes sociales y WhatsApp; descarga PNG o SVG, sin anuncios ni registro.
 - [Generador de links de WhatsApp](https://afdevelopers.com/herramientas/generador-links-whatsapp): enlace con teléfono, mensaje y QR; no envía mensajes automáticamente.
 - [Calculadora de costos gastronómicos](https://afdevelopers.com/herramientas/calculadora-costos-gastronomicos): ingredientes, porciones, costo y precio sugerido según margen deseado.
-- [Calculadora de comisiones de delivery por pedido](https://afdevelopers.com/herramientas/calculadora-comisiones-delivery-por-pedido): estima cuánto recibe el comercio de una venta tras cargos configurables; no calcula ganancia neta del negocio.
 - [Conversor de imágenes gratis](https://afdevelopers.com/herramientas/conversor-imagenes): convierte PNG, JPG y WebP en el navegador, sin subir el archivo.
 - [API pública y contrato OpenAPI](https://afdevelopers.com/herramientas/api/v1/openapi.json): integración para sistemas externos.
 

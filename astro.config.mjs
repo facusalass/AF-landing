@@ -21,7 +21,7 @@ export default defineConfig({
 
   integrations: [icon(), sitemap({
     filter: (page) => !page.includes('/404'),
-    customPages: ['/herramientas', '/herramientas/calculadora-costos-pedidos', '/herramientas/generador-qr', '/herramientas/generador-links-whatsapp', '/herramientas/calculadora-costos-gastronomicos', '/herramientas/calculadora-comisiones-delivery-por-pedido', '/herramientas/conversor-imagenes'].map(
+    customPages: ['/herramientas', '/herramientas/calculadora-costos-pedidos', '/herramientas/generador-qr', '/herramientas/generador-links-whatsapp', '/herramientas/calculadora-costos-gastronomicos', '/herramientas/conversor-imagenes'].map(
       (pathname) => new URL(pathname, env.PUBLIC_SITE_URL || 'https://afdevelopers.com').href,
     ),
   })],
